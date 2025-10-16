@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyle’s Karate | Martial Arts for Kids & Families</title>
-  <meta name="description" content="Kyle’s Karate offers high-energy martial arts classes and after-school programs across DC, Maryland, and Virginia. Confidence, focus, and respect through training." />
+  <title>Kyle’s Karate | Martial Arts for Maryland & Virginia</title>
+  <meta name="description" content="Kyle’s Karate offers martial arts classes, birthday parties, and private lessons across Maryland and Northern Virginia." />
   <style>
+    /* (same shared CSS as before) */
     :root {
       --main-bg: #fff;
       --accent: #e63946;
@@ -14,171 +15,80 @@
       --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: var(--font);
-      color: var(--text);
-      background: var(--main-bg);
-      line-height: 1.5;
-    }
-    header {
-      background: var(--accent);
-      color: white;
-      padding: 1.2rem 1rem;
-      text-align: center;
-      font-size: 1.3rem;
-      letter-spacing: 0.5px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem;
-      background: #000;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.4rem 0.9rem;
-      border: 2px solid #fff;
-      border-radius: 0;
-      transition: 0.2s;
-    }
-    nav a:hover {
-      background: #fff;
-      color: #000;
-    }
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem 3rem;
-      background: linear-gradient(to bottom right, #000, #333);
-      color: #fff;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-    }
-    .hero a {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .hero a:hover {
-      background: #c32f3b;
-    }
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3rem 1rem;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
-    .about, .programs, .contact {
-      text-align: center;
-    }
-    .programs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .program {
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 1.5rem;
-      transition: transform 0.2s;
-    }
-    .program:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-    }
-    .program h3 {
-      margin-top: 0;
-      color: var(--accent);
-    }
-    .program p {
-      color: var(--muted);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #000;
-      color: #fff;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.7rem; }
-      .hero p { font-size: 1rem; }
+    body { margin:0; font-family: var(--font); color: var(--text); background: var(--main-bg); line-height:1.5; }
+    header { background: var(--accent); color: white; padding:1.2rem; text-align:center; font-size:1.3rem; }
+    nav { display:flex; justify-content:center; gap:1rem; background:#000; padding:1rem; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; padding:0.4rem 0.9rem; border:2px solid #fff; transition:0.2s; }
+    nav a:hover { background:#fff; color:#000; }
+    .hero { text-align:center; padding:4rem 1rem 3rem; background:linear-gradient(to bottom right, #000, #333); color:#fff; }
+    .hero h1 { font-size:2.2rem; margin-bottom:0.5rem; }
+    .hero p { font-size:1.1rem; max-width:600px; margin:0 auto 1.5rem; }
+    .hero a { display:inline-block; background:var(--accent); color:white; padding:0.8rem 1.5rem; text-decoration:none; transition:background 0.2s; }
+    .hero a:hover { background:#c32f3b; }
+    section { max-width:900px; margin:0 auto; padding:3rem 1rem; }
+    section h2 { text-align:center; font-size:1.8rem; margin-bottom:1.5rem; }
+    .programs-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.5rem; margin-top:2rem; }
+    .program { border:1px solid #ddd; border-radius:6px; padding:1.5rem; transition:transform 0.2s; }
+    .program:hover { transform:translateY(-4px); border-color:var(--accent); }
+    .program h3 { margin-top:0; color:var(--accent); }
+    .program p { color:var(--muted); }
+    footer { text-align:center; padding:2rem 1rem; background:#000; color:#fff; font-size:0.9rem; }
+    footer a { color:#fff; text-decoration:underline; }
+    @media (max-width:600px) {
+      .hero h1 { font-size:1.7rem; }
+      .hero p { font-size:1rem; }
     }
   </style>
 </head>
 <body>
-
   <header>Kyle’s Karate</header>
-
   <nav>
-    <a href="#about">About</a>
-    <a href="#programs">Programs</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <section class="hero">
     <h1>Martial Arts with Purpose</h1>
-    <p>Building confidence, focus, and discipline through fun, high-energy karate classes for kids and families across DC, Maryland, and Virginia.</p>
-    <a href="#contact">Join a Class</a>
+    <p>Kyle’s Karate is a modern martial arts self-defense program combining exciting instruction with practical, effective techniques. We deliver classes at on-site locations across Maryland and Virginia. :contentReference[oaicite:1]{index=1}</p>
+    <a href="programs.html">See Our Programs</a>
   </section>
 
-  <section id="about" class="about">
-    <h2>About Kyle’s Karate</h2>
-    <p>Kyle’s Karate is led by experienced instructors who teach more than techniques — they teach life skills. Our mission is to help students grow physically, mentally, and emotionally through consistent, structured training.</p>
-  </section>
-
-  <section id="programs" class="programs">
-    <h2>Programs</h2>
+  <section id="programs">
+    <h2>What We Do</h2>
     <div class="programs-grid">
       <div class="program">
-        <h3>After-School Karate</h3>
-        <p>Our most popular program — weekly after-school classes at local private schools and daycares. We bring karate to your child’s campus.</p>
+        <h3>Classes</h3>
+        <p>Weekly martial arts classes held at schools, daycares, and local facilities. Students learn fundamentals, self-defense, and character development. :contentReference[oaicite:2]{index=2}</p>
       </div>
       <div class="program">
-        <h3>Group Lessons</h3>
-        <p>Small-group training for kids and families at select locations or private residences. Personalized instruction and fun energy.</p>
+        <h3>Birthday Parties & Events</h3>
+        <p>Fun, engaging karate-themed parties and demonstrations for birthdays, schools, and corporate events. :contentReference[oaicite:3]{index=3}</p>
       </div>
       <div class="program">
-        <h3>Birthday Parties</h3>
-        <p>Make their birthday unforgettable with a high-energy karate party — exciting drills, board breaking, and memorable fun.</p>
+        <h3>Private Lessons</h3>
+        <p>One-on-one or small-group training delivered at home or your preferred location. :contentReference[oaicite:4]{index=4}</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Ready to enroll or learn more? Reach out anytime.</p>
+  <section id="about">
+    <h2>About Kyle’s Karate</h2>
+    <p>Kyle’s Karate is a traveling martial arts vendor offering enrichment, after-school programs, birthdays, at-home private lessons, and events across Maryland and Virginia, including areas like Potomac, McLean, Fairfax, and Loudoun County. :contentReference[oaicite:5]{index=5}</p>
+    <p>Led by Kyle Mitcham, who has been teaching since 2009, the style combines traditional technique, self-defense practicality, and life skills. :contentReference[oaicite:6]{index=6}</p>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Have questions or ready to enroll? Reach out below.</p>
     <p><strong>Email:</strong> <a href="mailto:kyle@kyleskarate.com">kyle@kyleskarate.com</a></p>
-    <p><strong>Website:</strong> <a href="https://kyleskarate.com">kyleskarate.com</a></p>
+    <p><strong>Locations Served:</strong> Montgomery County, Fairfax County, Loudoun County, and surrounding areas. :contentReference[oaicite:7]{index=7}</p>
   </section>
 
   <footer>
     © <span id="year"></span> Kyle’s Karate. All rights reserved.<br>
-    Site built with GitHub Pages.
+    <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="programs.html">Programs</a> · <a href="contact.html">Contact</a>
   </footer>
 
   <script>
