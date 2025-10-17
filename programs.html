@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs | Kyle’s Karate</title>
+  <meta name="description" content="Classes, private lessons, parties, and events offered by Kyle’s Karate in Maryland and Virginia." />
+  <style>
+    /* same CSS */
+    :root {
+      --main-bg: #fff;
+      --accent: #e63946;
+      --text: #111;
+      --muted: #555;
+      --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: var(--font); color: var(--text); background: var(--main-bg); line-height:1.5; }
+    header { background: var(--accent); color: white; padding:1.2rem; text-align:center; font-size:1.3rem; }
+    nav { display:flex; justify-content:center; gap:1rem; background:#000; padding:1rem; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; padding:0.4rem 0.9rem; border:2px solid #fff; transition:0.2s; }
+    nav a:hover { background:#fff; color:#000; }
+    section { max-width:900px; margin:0 auto; padding:3rem 1rem; }
+    section h2 { text-align:center; font-size:1.8rem; margin-bottom:1.5rem; }
+    .programs-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.5rem; margin-top:2rem; }
+    .program { border:1px solid #ddd; border-radius:6px; padding:1.5rem; transition:transform 0.2s; }
+    .program:hover { transform:translateY(-4px); border-color:var(--accent); }
+    .program h3 { margin-top:0; color:var(--accent); }
+    .program p { color:var(--muted); }
+    footer { text-align:center; padding:2rem 1rem; background:#000; color:#fff; font-size:0.9rem; }
+    footer a { color:#fff; text-decoration:underline; }
+    @media (max-width:600px) {
+      section h2 { font-size:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>Kyle’s Karate</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section>
+    <h2>Programs & Services</h2>
+    <div class="programs-grid">
+      <div class="program">
+        <h3>Enrichment & After-School Classes</h3>
+        <p>We bring martial arts classes directly to schools or daycares — no extra travel needed. Students learn fundamentals, self-defense, discipline, respect, and confidence. :contentReference[oaicite:12]{index=12}</p>
+      </div>
+      <div class="program">
+        <h3>Birthday Parties & Events</h3>
+        <p>Our karate-themed birthday parties, seminars, and demonstrations bring the fun and energy to your location. :contentReference[oaicite:13]{index=13}</p>
+      </div>
+      <div class="program">
+        <h3>Private Lessons</h3>
+        <p>Tailored training in your home or preferred space — individually or in small groups. Flexible schedule, focused growth. :contentReference[oaicite:14]{index=14}</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Kyle’s Karate. All rights reserved.<br>
+    <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="programs.html">Programs</a> · <a href="contact.html">Contact</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
