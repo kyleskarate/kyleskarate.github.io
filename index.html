@@ -23,7 +23,10 @@
 
     /* HAMBURGER */
     .hamburger{display:none;flex-direction:column;justify-content:space-between;width:24px;height:18px;cursor:pointer;}
-    .hamburger span{display:block;height:2px;background:#000;border-radius:3px;transition:all .3s;}
+    .hamburger span{display:block;height:2px;background:#000;border-radius:3px;transition:all .3s ease;}
+    .hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.active span:nth-child(2){opacity:0;}
+    .hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
     .mobile-nav{display:none;flex-direction:column;background:#fff;position:absolute;top:100%;left:0;width:100%;border-top:1px solid #eee;padding:1rem 0;text-align:center;}
     .mobile-nav a{color:#000;text-decoration:none;font-weight:600;padding:.7rem 0;display:block;}
     .mobile-nav.show{display:flex;}
@@ -90,7 +93,7 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
   </div>
@@ -172,8 +175,15 @@
 
 <script>
   const scrollTopBtn=document.getElementById('scrollTopBtn');
+  const hamburger=document.getElementById('hamburger');
+  const mobileNav=document.getElementById('mobileNav');
+
   window.addEventListener('scroll',()=>{if(window.scrollY>400){scrollTopBtn.classList.add('show');}else{scrollTopBtn.classList.remove('show');}});
-  function toggleMenu(){document.getElementById('mobileNav').classList.toggle('show');}
+
+  function toggleMenu(){
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('show');
+  }
 </script>
 </body>
 </html>
