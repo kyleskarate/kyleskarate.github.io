@@ -6,7 +6,6 @@
   <title>Kyle’s Karate | Maryland & Northern Virginia Martial Arts</title>
   <meta name="description" content="The premier martial arts vendor for Maryland and Northern Virginia. Classes, birthdays, and private lessons taught on-site by experienced instructors." />
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -28,7 +27,6 @@
     header {
       background: #fff;
       padding: 0.8rem 1rem;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
     .header-inner {
       max-width: 1100px;
@@ -62,7 +60,7 @@
       background: url('images/hero.png') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 10rem 1rem 7rem;
+      padding: 9rem 1rem 6rem;
     }
     .hero::after {
       content: "";
@@ -76,7 +74,7 @@
       z-index: 1;
       max-width: 800px;
       margin: 0 auto;
-      transform: translateY(-2rem);
+      transform: translateY(-1.5rem);
     }
     .hero h1 {
       font-size: 2.6rem;
@@ -107,7 +105,7 @@
       height: 28px;
       border-left: 3px solid #fff;
       border-bottom: 3px solid #fff;
-      animation: bounce 3s infinite;
+      animation: bounce 3.5s infinite;
       cursor: pointer;
       z-index: 2;
     }
@@ -186,8 +184,8 @@
       margin: 0 auto 2rem;
       align-items: start;
     }
-    .footer-logo img {
-      height: 70px;
+    .footer-logo a img {
+      height: 85px;
       display: block;
       margin-bottom: 1.5rem;
     }
@@ -216,10 +214,39 @@
       margin: 0.3rem 0;
     }
 
+    /* SCROLL TO TOP BUTTON */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #000;
+      color: #fff;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 99;
+    }
+    #scrollTopBtn.show {
+      opacity: 0.9;
+      visibility: visible;
+    }
+    #scrollTopBtn:hover {
+      background: #222;
+    }
+
     @media (max-width: 700px) {
-      .hero { padding: 8rem 1rem 6rem; }
+      .hero { padding: 7rem 1rem 5rem; }
       .hero h1 { font-size: 2.2rem; }
       .footer-inner { grid-template-columns: 1fr; text-align: left; }
+      #scrollTopBtn { bottom: 1.2rem; right: 1.2rem; }
     }
   </style>
 </head>
@@ -274,22 +301,7 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">
-        <img src="images/logoOnBlack.png" alt="Kyle’s Karate Logo on Black">
-      </div>
-
-      <div class="footer-column">
-        <h3>About</h3>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="index.html">Home</a>
-        <a href="locations.html">Locations</a>
-      </div>
-
-      <div class="footer-column">
-        <h3>Legal</h3>
-        <a href="terms.html">Terms of Service</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="waiver.html">Injury Waiver</a>
+        <a href="index.html"><img src="images/logoOnBlack.png" alt="Kyle’s Karate Logo on Black"></a>
       </div>
 
       <div class="footer-column">
@@ -300,6 +312,20 @@
         <a href="private-lessons.html">Private Lessons</a>
         <a href="events.html">Events</a>
       </div>
+
+      <div class="footer-column">
+        <h3>About</h3>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="locations.html">Locations</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="waiver.html">Injury Waiver</a>
+      </div>
     </div>
 
     <div class="footer-bottom">
@@ -307,6 +333,20 @@
       <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
     </div>
   </footer>
+
+  <!-- SCROLL TO TOP BUTTON -->
+  <div id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</div>
+
+  <script>
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+  </script>
 
 </body>
 </html>
