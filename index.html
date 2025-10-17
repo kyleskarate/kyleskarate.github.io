@@ -8,131 +8,78 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    html,body{max-width:100%;overflow-x:hidden;}
-    :root{--text:#37352F;--muted:#555;--font:'Inter',sans-serif;}
-    *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth;}
-    body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;}
+html,body{max-width:100%;overflow-x:hidden;}
+:root{--text:#37352F;--muted:#555;--font:'Inter',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;}
 
-    /* HEADER */
-    header{background:#fff;padding:0.8rem 1rem;position:relative;z-index:10;}
-    .header-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
-    .logo img{height:52px;display:block;}
-    nav{display:flex;gap:1.6rem;}
-    nav a{color:var(--text);text-decoration:none;font-weight:600;transition:opacity .2s;}
-    nav a:hover{opacity:.6;}
+/* HEADER */
+header{background:#fff;padding:0.8rem 1rem;position:relative;z-index:10;}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+.logo img{height:52px;display:block;}
+nav{display:flex;gap:1.6rem;}
+nav a{color:var(--text);text-decoration:none;font-weight:600;transition:opacity .2s;}
+nav a:hover{opacity:.6;}
 
-    /* HAMBURGER */
-    .hamburger{display:none;flex-direction:column;justify-content:space-between;width:24px;height:18px;cursor:pointer;}
-    .hamburger span{display:block;height:2px;background:#000;border-radius:3px;transition:all .3s ease;}
-    .hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg);}
-    .hamburger.active span:nth-child(2){opacity:0;}
-    .hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
-    .mobile-nav{display:none;flex-direction:column;background:#fff;position:absolute;top:100%;left:0;width:100%;border-top:1px solid #eee;padding:1rem 0;text-align:center;
-      opacity:0;transform:translateY(-10px);transition:opacity .25s ease,transform .25s ease;}
-    .mobile-nav.show{display:flex;opacity:1;transform:translateY(0);}
-    .mobile-nav a{color:#000;text-decoration:none;font-weight:600;padding:.7rem 0;display:block;}
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:space-between;width:22px;height:16px;cursor:pointer;}
+.hamburger span{display:block;height:2px;background:#000;border-radius:3px;transition:all .3s ease;}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;flex-direction:column;background:#fff;position:absolute;top:100%;left:0;width:100%;border-top:1px solid #eee;padding:1rem 0;text-align:center;opacity:0;transform:translateY(-10px);transition:opacity .25s,transform .25s;}
+.mobile-nav.show{display:flex;opacity:1;transform:translateY(0);}
+.mobile-nav a{color:#000;text-decoration:none;font-weight:600;padding:.7rem 0;display:block;}
 
-    /* HERO */
-    .hero{position:relative;background:url('images/hero.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:9rem 1rem 6rem;}
-    .hero::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.45);z-index:0;}
-    .hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto;transform:translateY(-1.5rem);}
-    .hero h1{font-size:3.5rem;font-weight:900;margin-bottom:2.8rem;}
-    .hero a.cta{display:inline-block;background:#000;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:background .2s;}
-    .hero a.cta:hover{background:#222;}
+/* HERO */
+.hero{position:relative;background:url('images/hero.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:8rem 1rem 6rem;}
+.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
+.hero h1{font-size:3.2rem;font-weight:900;margin-bottom:2.5rem;}
+.hero a.cta{display:inline-block;background:#000;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:background .2s;}
+.hero a.cta:hover{background:#222;}
 
-    /* DOWN ARROW */
-    .down-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%) rotate(-45deg);width:28px;height:28px;border-left:3px solid #fff;border-bottom:3px solid #fff;animation:bounce 3.5s infinite;cursor:pointer;z-index:2;}
-    @keyframes bounce{0%,20%,50%,80%,100%{transform:translate(-50%,0) rotate(-45deg);}40%{transform:translate(-50%,8px) rotate(-45deg);}60%{transform:translate(-50%,4px) rotate(-45deg);}}
+/* DOWN ARROW */
+.down-arrow{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%) rotate(-45deg);width:28px;height:28px;border-left:3px solid #fff;border-bottom:3px solid #fff;animation:bounce 3.5s infinite;cursor:pointer;z-index:2;}
+@keyframes bounce{0%,20%,50%,80%,100%{transform:translate(-50%,0) rotate(-45deg);}40%{transform:translate(-50%,8px) rotate(-45deg);}60%{transform:translate(-50%,4px) rotate(-45deg);}}
 
-    /* SERVICES */
-    section{max-width:900px;margin:0 auto;padding:3.5rem 1rem;}
-    section h2{text-align:center;font-size:1.9rem;margin-bottom:1.8rem;color:var(--text);}
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem;margin-top:2rem;}
-    .service{border:2px solid #000;border-radius:8px;padding:1.8rem;text-align:center;transition:transform .2s,border-color .2s;background:#fff;}
-    .service:hover{transform:translateY(-5px);border-color:#222;}
-    .service h3{color:var(--text);margin-bottom:.9rem;font-size:1.1rem;}
-    .service p{color:var(--muted);}
-    .service a{display:inline-block;margin-top:1.2rem;color:#fff;background:#000;padding:.7rem 1.4rem;text-decoration:none;font-weight:600;border-radius:8px;transition:background .2s;}
-    .service a:hover{background:#222;}
+/* SERVICES */
+section{max-width:900px;margin:0 auto;padding:3.5rem 1rem;}
+section h2{text-align:center;font-size:1.9rem;margin-bottom:1.8rem;color:var(--text);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem;margin-top:2rem;}
+.service{border:2px solid #000;border-radius:8px;padding:1.8rem;text-align:center;transition:transform .2s,border-color .2s;background:#fff;}
+.service:hover{transform:translateY(-5px);border-color:#222;}
+.service h3{color:var(--text);margin-bottom:.9rem;font-size:1.1rem;}
+.service p{color:var(--muted);}
+.service a{display:inline-block;margin-top:1.2rem;color:#fff;background:#000;padding:.7rem 1.4rem;text-decoration:none;font-weight:600;border-radius:8px;transition:background .2s;}
+.service a:hover{background:#222;}
 
-   /* FOOTER */
-footer {
-  background: #000;
-  color: #fff;
-  padding: 3.5rem 1rem;
-  margin-top: 3rem;
+/* FOOTER */
+footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;max-width:1000px;margin:0 auto 2rem;}
+.footer-logo{flex-shrink:0;}
+.footer-logo a img{height:85px;display:block;margin-bottom:1.5rem;}
+.footer-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:2.3rem;max-width:640px;}
+.footer-column h3{font-size:1.2rem;margin-bottom:0.8rem;font-weight:700;}
+.footer-column a{display:block;color:#fff;text-decoration:none;margin:0.3rem 0;transition:opacity 0.2s;}
+.footer-column a:hover{opacity:0.7;}
+.footer-bottom{text-align:center;font-size:0.9rem;border-top:1px solid #333;padding-top:1.5rem;}
+.footer-bottom p{margin:0.3rem 0;}
+
+/* SCROLL TOP */
+#scrollTopBtn{position:fixed;bottom:2rem;right:2rem;background:#000;color:#fff;border:2px solid #fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:99;}
+#scrollTopBtn.show{opacity:.9;visibility:visible;}
+#scrollTopBtn:hover{background:#222;}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{display:none;}
+  .hamburger{display:flex;}
+  .logo img{height:36px;}
+  .hero{padding:6rem 1rem 4rem;background-position:center top;}
+  .hero h1{font-size:1.9rem;line-height:1.3;}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:2rem;}
+  .footer-columns{grid-template-columns:1fr;gap:1.5rem;max-width:100%;}
 }
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1000px;
-  margin: 0 auto 2rem;
-}
-
-.footer-logo {
-  flex-shrink: 0;
-}
-
-.footer-logo a img {
-  height: 85px;
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
-.footer-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.75rem; /* sweet spot for spacing */
-  max-width: 670px; /* gives just a touch more width */
-}
-
-
-.footer-column h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-  font-weight: 700;
-}
-
-.footer-column a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  margin: 0.3rem 0;
-  transition: opacity 0.2s;
-}
-
-.footer-column a:hover {
-  opacity: 0.7;
-}
-
-.footer-bottom {
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
-  padding-top: 1.5rem;
-}
-
-.footer-bottom p {
-  margin: 0.3rem 0;
-}
-
-@media (max-width: 700px) {
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-
-  .footer-columns {
-    flex-direction: column;
-    margin-left: 0;
-    gap: 2rem;
-    max-width: 100%;
-  }
-}
-
   </style>
 </head>
 
@@ -145,17 +92,18 @@ footer {
       <a href="programs.html">Services</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="merch.html">Merch</a>
     </nav>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
   </div>
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
     <a href="register.html">Register</a>
     <a href="programs.html">Services</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="merch.html">Merch</a>
   </div>
 </header>
 
@@ -226,16 +174,19 @@ footer {
 <div id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑</div>
 
 <script>
-  const scrollTopBtn=document.getElementById('scrollTopBtn');
-  const hamburger=document.getElementById('hamburger');
-  const mobileNav=document.getElementById('mobileNav');
+const scrollTopBtn=document.getElementById('scrollTopBtn');
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
 
-  window.addEventListener('scroll',()=>{if(window.scrollY>400){scrollTopBtn.classList.add('show');}else{scrollTopBtn.classList.remove('show');}});
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>400){scrollTopBtn.classList.add('show');}
+  else{scrollTopBtn.classList.remove('show');}
+});
 
-  function toggleMenu(){
-    hamburger.classList.toggle('active');
-    mobileNav.classList.toggle('show');
-  }
+function toggleMenu(){
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('show');
+}
 </script>
 </body>
 </html>
