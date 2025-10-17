@@ -6,12 +6,14 @@
   <title>Kyle’s Karate | Maryland & Northern Virginia Martial Arts</title>
   <meta name="description" content="The premier martial arts vendor for Maryland and Northern Virginia. Classes, birthdays, and private lessons taught on-site by experienced instructors." />
 
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --accent: #e63946;
       --text: #111;
       --muted: #555;
-      --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font: 'Inter', sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,12 +24,39 @@
       line-height: 1.5;
     }
 
-    /* Minimal layout structure to prevent jump before fetch() loads */
-    #header, #footer {
-      min-height: 80px;
-      background: #000;
+    /* HEADER */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 0.8rem 1rem;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img {
+      height: 48px;
+      display: block;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    nav a {
+      color: #000;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    nav a:hover {
+      opacity: 0.7;
     }
 
+    /* HERO */
     .hero {
       position: relative;
       background: url('images/hero.png') center/cover no-repeat;
@@ -50,21 +79,23 @@
     }
     .hero h1 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
     .hero a {
       display: inline-block;
-      background: var(--accent);
+      background: #000;
       color: #fff;
-      padding: 0.8rem 1.5rem;
-      font-weight: bold;
+      padding: 0.9rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
       text-decoration: none;
       transition: background 0.2s;
     }
     .hero a:hover {
-      background: #c32f3b;
+      background: #222;
     }
 
+    /* SERVICES SECTION */
     section {
       max-width: 900px;
       margin: 0 auto;
@@ -75,7 +106,6 @@
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
     }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -91,11 +121,12 @@
     }
     .service:hover {
       transform: translateY(-4px);
-      border-color: var(--accent);
+      border-color: #000;
     }
     .service h3 {
-      color: var(--accent);
+      color: #000;
       margin-top: 0;
+      margin-bottom: 0.8rem;
     }
     .service p {
       color: var(--muted);
@@ -104,14 +135,53 @@
       display: inline-block;
       margin-top: 1rem;
       color: #fff;
-      background: var(--accent);
-      padding: 0.5rem 1rem;
+      background: #000;
+      padding: 0.6rem 1.2rem;
       text-decoration: none;
       font-weight: 600;
+      border-radius: 8px;
       transition: background 0.2s;
     }
     .service a:hover {
-      background: #c32f3b;
+      background: #222;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 3rem 1rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+    }
+    .footer-column h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+    .footer-column a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 0.3rem 0;
+      transition: opacity 0.2s;
+    }
+    .footer-column a:hover {
+      opacity: 0.7;
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+      padding-top: 1.5rem;
+    }
+    .footer-bottom p {
+      margin: 0.3rem 0;
     }
 
     @media (max-width: 700px) {
@@ -122,10 +192,20 @@
 </head>
 <body>
 
-  <!-- Shared Header -->
-  <div id="header"></div>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Kyle’s Karate Logo"></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <h1>The Premier Martial Arts Vendor for Maryland and Northern Virginia</h1>
@@ -133,7 +213,7 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- SERVICES -->
   <section>
     <h2>Our Services</h2>
     <div class="services-grid">
@@ -155,18 +235,39 @@
     </div>
   </section>
 
-  <!-- Shared Footer -->
-  <div id="footer"></div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-column">
+        <h3>About</h3>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="locations.html">Locations</a>
+      </div>
 
-  <script>
-    async function include(path, target) {
-      const res = await fetch(path);
-      const html = await res.text();
-      document.getElementById(target).innerHTML = html;
-    }
-    include('header.html', 'header');
-    include('footer.html', 'footer');
-  </script>
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="waiver.html">Injury Waiver</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Services</h3>
+        <a href="register.html">Register</a>
+        <a href="classes.html">Class Information</a>
+        <a href="birthdays.html">Birthdays</a>
+        <a href="private-lessons.html">Private Lessons</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Copyright 2014–2025 Kyle’s Karate</p>
+      <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
