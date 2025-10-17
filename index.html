@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyle’s Karate | Martial Arts for Maryland & Virginia</title>
-  <meta name="description" content="Kyle’s Karate offers martial arts classes, birthday parties, and private lessons across Maryland and Northern Virginia." />
+  <title>Kyle’s Karate | Maryland & Northern Virginia Martial Arts</title>
+  <meta name="description" content="The premier martial arts vendor for Maryland and Northern Virginia. Classes, birthdays, and private lessons taught on-site by experienced instructors." />
   <style>
-    /* (same shared CSS as before) */
     :root {
       --main-bg: #fff;
       --accent: #e63946;
@@ -15,25 +14,67 @@
       --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
-    body { margin:0; font-family: var(--font); color: var(--text); background: var(--main-bg); line-height:1.5; }
-    header { background: var(--accent); color: white; padding:1.2rem; text-align:center; font-size:1.3rem; }
+    body { margin:0; font-family:var(--font); color:var(--text); background:var(--main-bg); line-height:1.5; }
+    header { background:var(--accent); color:#fff; padding:1.2rem; text-align:center; font-size:1.3rem; }
     nav { display:flex; justify-content:center; gap:1rem; background:#000; padding:1rem; flex-wrap:wrap; }
     nav a { color:#fff; text-decoration:none; padding:0.4rem 0.9rem; border:2px solid #fff; transition:0.2s; }
     nav a:hover { background:#fff; color:#000; }
-    .hero { text-align:center; padding:4rem 1rem 3rem; background:linear-gradient(to bottom right, #000, #333); color:#fff; }
+    .hero {
+      text-align:center;
+      padding:5rem 1rem 4rem;
+      background:linear-gradient(to bottom right, #000, #333);
+      color:#fff;
+    }
     .hero h1 { font-size:2.2rem; margin-bottom:0.5rem; }
-    .hero p { font-size:1.1rem; max-width:600px; margin:0 auto 1.5rem; }
-    .hero a { display:inline-block; background:var(--accent); color:white; padding:0.8rem 1.5rem; text-decoration:none; transition:background 0.2s; }
+    .hero p { font-size:1.1rem; margin-bottom:1.5rem; }
+    .hero a {
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:0.8rem 1.5rem;
+      text-decoration:none;
+      font-weight:bold;
+      transition:background 0.2s;
+    }
     .hero a:hover { background:#c32f3b; }
     section { max-width:900px; margin:0 auto; padding:3rem 1rem; }
     section h2 { text-align:center; font-size:1.8rem; margin-bottom:1.5rem; }
-    .programs-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.5rem; margin-top:2rem; }
-    .program { border:1px solid #ddd; border-radius:6px; padding:1.5rem; transition:transform 0.2s; }
-    .program:hover { transform:translateY(-4px); border-color:var(--accent); }
-    .program h3 { margin-top:0; color:var(--accent); }
-    .program p { color:var(--muted); }
-    footer { text-align:center; padding:2rem 1rem; background:#000; color:#fff; font-size:0.9rem; }
+    .services-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:1.5rem;
+      margin-top:2rem;
+    }
+    .service {
+      border:1px solid #ddd;
+      border-radius:6px;
+      padding:1.5rem;
+      text-align:center;
+      transition:transform 0.2s;
+    }
+    .service:hover { transform:translateY(-4px); border-color:var(--accent); }
+    .service h3 { color:var(--accent); margin-top:0; }
+    .service p { color:var(--muted); }
+    .service a {
+      display:inline-block;
+      margin-top:1rem;
+      color:#fff;
+      background:var(--accent);
+      padding:0.5rem 1rem;
+      text-decoration:none;
+      font-weight:600;
+      transition:background 0.2s;
+    }
+    .service a:hover { background:#c32f3b; }
+    footer {
+      text-align:center;
+      padding:2rem 1rem;
+      background:#000;
+      color:#fff;
+      font-size:0.9rem;
+    }
     footer a { color:#fff; text-decoration:underline; }
+    footer p { margin:0.3rem 0; }
     @media (max-width:600px) {
       .hero h1 { font-size:1.7rem; }
       .hero p { font-size:1rem; }
@@ -41,54 +82,47 @@
   </style>
 </head>
 <body>
+
   <header>Kyle’s Karate</header>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
+    <a href="programs.html">Services</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <section class="hero">
-    <h1>Martial Arts with Purpose</h1>
-    <p>Kyle’s Karate is a modern martial arts self-defense program combining exciting instruction with practical, effective techniques. We deliver classes at on-site locations across Maryland and Virginia. :contentReference[oaicite:1]{index=1}</p>
-    <a href="programs.html">See Our Programs</a>
+    <h1>The Premier Martial Arts Vendor for Maryland and Northern Virginia</h1>
+    <p>We bring exciting, effective martial arts instruction directly to schools, homes, and events across the DMV area.</p>
+    <a href="programs.html">View Services</a>
   </section>
 
-  <section id="programs">
-    <h2>What We Do</h2>
-    <div class="programs-grid">
-      <div class="program">
+  <section>
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service">
         <h3>Classes</h3>
-        <p>Weekly martial arts classes held at schools, daycares, and local facilities. Students learn fundamentals, self-defense, and character development. :contentReference[oaicite:2]{index=2}</p>
+        <p>Kyle’s Karate is a modern self-defense program combining exciting instruction with practical, effective techniques. Classes are taught on-site at schools and facilities.</p>
+        <a href="programs.html">Register</a>
       </div>
-      <div class="program">
-        <h3>Birthday Parties & Events</h3>
-        <p>Fun, engaging karate-themed parties and demonstrations for birthdays, schools, and corporate events. :contentReference[oaicite:3]{index=3}</p>
+      <div class="service">
+        <h3>Birthdays</h3>
+        <p>Make your child’s day unforgettable with a high-energy karate party. Kyle’s Karate brings the fun to your location — drills, games, and real karate excitement.</p>
+        <a href="programs.html">Learn More</a>
       </div>
-      <div class="program">
+      <div class="service">
         <h3>Private Lessons</h3>
-        <p>One-on-one or small-group training delivered at home or your preferred location. :contentReference[oaicite:4]{index=4}</p>
+        <p>Learn at home with a class tailored to your goals. Personalized instruction, flexible scheduling, and a fun, focused environment for kids or adults.</p>
+        <a href="programs.html">Schedule</a>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Kyle’s Karate</h2>
-    <p>Kyle’s Karate is a traveling martial arts vendor offering enrichment, after-school programs, birthdays, at-home private lessons, and events across Maryland and Virginia, including areas like Potomac, McLean, Fairfax, and Loudoun County. :contentReference[oaicite:5]{index=5}</p>
-    <p>Led by Kyle Mitcham, who has been teaching since 2009, the style combines traditional technique, self-defense practicality, and life skills. :contentReference[oaicite:6]{index=6}</p>
-  </section>
-
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <p>Have questions or ready to enroll? Reach out below.</p>
-    <p><strong>Email:</strong> <a href="mailto:kyle@kyleskarate.com">kyle@kyleskarate.com</a></p>
-    <p><strong>Locations Served:</strong> Montgomery County, Fairfax County, Loudoun County, and surrounding areas. :contentReference[oaicite:7]{index=7}</p>
-  </section>
-
   <footer>
-    © <span id="year"></span> Kyle’s Karate. All rights reserved.<br>
-    <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="programs.html">Programs</a> · <a href="contact.html">Contact</a>
+    <p>© 2014–<span id="year"></span> Kyle’s Karate. All rights reserved.</p>
+    <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
+    <p><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="waiver.html">Injury Waiver</a></p>
   </footer>
 
   <script>
