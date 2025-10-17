@@ -4,55 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Kyle’s Karate</title>
-  <meta name="description" content="Learn about Kyle’s Karate, our mission, founder, and how we operate across Maryland and Virginia." />
+  <meta name="description" content="Learn about Kyle’s Karate, a traveling martial arts vendor serving Maryland and Virginia with classes, birthdays, private lessons, and events." />
+
   <style>
-    /* copy same CSS from index.html */
     :root {
-      --main-bg: #fff;
       --accent: #e63946;
       --text: #111;
       --muted: #555;
       --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: var(--font); color: var(--text); background: var(--main-bg); line-height:1.5; }
-    header { background: var(--accent); color: white; padding:1.2rem; text-align:center; font-size:1.3rem; }
-    nav { display:flex; justify-content:center; gap:1rem; background:#000; padding:1rem; flex-wrap:wrap; }
-    nav a { color:#fff; text-decoration:none; padding:0.4rem 0.9rem; border:2px solid #fff; transition:0.2s; }
-    nav a:hover { background:#fff; color:#000; }
-    section { max-width:900px; margin:0 auto; padding:3rem 1rem; }
-    section h2 { text-align:center; font-size:1.8rem; margin-bottom:1.5rem; }
-    footer { text-align:center; padding:2rem 1rem; background:#000; color:#fff; font-size:0.9rem; }
-    footer a { color:#fff; text-decoration:underline; }
-    @media (max-width:600px) {
-      section h2 { font-size:1.5rem; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    /* Prevent layout jump before fetch includes load */
+    #header, #footer {
+      min-height: 80px;
+      background: #000;
+    }
+
+    .hero {
+      position: relative;
+      background: url('images/hero.png') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 7rem 1rem;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .offer-list {
+      margin: 1rem 0 2rem;
+      padding-left: 1.2rem;
+    }
+    .offer-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .owner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .owner img {
+      width: 260px;
+      border-radius: 8px;
+    }
+    .owner-info h3 {
+      margin: 0 0 0.5rem;
+      color: var(--accent);
+    }
+
+    @media (max-width: 700px) {
+      .hero { padding: 5rem 1rem; }
+      .hero h1 { font-size: 1.8rem; }
+      .owner { flex-direction: column; align-items: flex-start; }
+      .owner img { width: 100%; max-width: 400px; }
     }
   </style>
 </head>
 <body>
-  <header>Kyle’s Karate</header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <section>
-    <h2>About Kyle’s Karate</h2>
-    <p>Kyle’s Karate is a traveling martial arts vendor that delivers enrichment, after-school programs, birthday parties, at-home private lessons, and events across Maryland and Virginia — including Potomac, McLean, Fairfax, and Loudoun County. :contentReference[oaicite:8]{index=8}</p>
-    <p>We emphasize real-world effectiveness, safety, and life skills. Students never spar each other; all training is done with gear under instructor control. :contentReference[oaicite:9]{index=9}</p>
-    <p>The program is led by Coach Kyle (Kyle Mitcham), who has taught since 2009 and holds a black belt in traditional Tangsoodo, supplemented by modern training and philosophy. :contentReference[oaicite:10]{index=10}</p>
-    <p>We believe in empowering students with confidence, discipline, and focus — tools they carry beyond the gym. Each year we run belt promotions, special events, and growth opportunities. :contentReference[oaicite:11]{index=11}</p>
+  <!-- Shared Header -->
+  <div id="header"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>About the Program</h1>
+    </div>
   </section>
 
-  <footer>
-    © <span id="year"></span> Kyle’s Karate. All rights reserved.<br>
-    <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="programs.html">Programs</a> · <a href="contact.html">Contact</a>
-  </footer>
+  <section>
+    <p><strong>Kyle’s Karate</strong> is a traveling martial arts vendor that offers enrichment, after-school programs, birthdays, at-home private lessons, and special events in Maryland and Virginia, including areas like Potomac, McLean, Fairfax, Montgomery County, and Loudoun County.</p>
+
+    <h2>What We Offer</h2>
+    <ul class="offer-list">
+      <li><strong>Foundation Martial Arts Class:</strong> Taught by a team trained and supervised by Kyle, focusing on the basics, stranger-danger, bully-conflict resolution, and fostering a confident, focused attitude.</li>
+      <li><strong>Birthday Parties:</strong> Customizable karate-themed parties for unforgettable fun.</li>
+      <li><strong>At-Home Private Lessons:</strong> Personalized one-on-one instruction in the comfort of your home.</li>
+      <li><strong>Corporate Events:</strong> Engaging and interactive experiences tailored to your needs.</li>
+      <li><strong>Safe Practice:</strong> Students make contact only with the equipment, ensuring a fun and safe experience.</li>
+      <li><strong>Highly Rated and Insured:</strong> Loved by students and parents alike for our fun classes and life skills teaching.</li>
+      <li><strong>In-House Classes:</strong> All necessary equipment is provided, including a full uniform and white belt for newcomers.</li>
+      <li><strong>Promotions and Special Events:</strong> Several belt promotions each school year, summer camps, and more.</li>
+    </ul>
+
+    <div class="owner">
+      <img src="images/kyle.jpg" alt="Kyle Mitcham teaching karate">
+      <div class="owner-info">
+        <h3>Kyle Mitcham, Owner</h3>
+        <p>Kyle Mitcham, or Coach Kyle, has been teaching martial arts since 2009, holding a black belt in traditional Tangsoodo and training in disciplines like Muay Thai. He's not just a practitioner but an innovator, having personally developed a unique style of American Karate.</p>
+        <p>Rooted in practicality, this style is not a casual invention but a carefully crafted methodology, outlined in his book. Combining traditional wisdom with modern insight, Kyle’s Karate offers an engaging and authentic experience.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:3rem;">Style and Philosophy</h2>
+    <p>Kyle’s Karate is a unique new style of American Karate, focusing on excellent technique and practicality. Discover more through Kyle’s books available on Amazon:</p>
+    <p><a href="https://www.amazon.com/s?k=kyle+mitcham+karate" target="_blank">Get the book on style</a> · <a href="https://www.amazon.com/s?k=kyle+mitcham+karate" target="_blank">Get the book on combat philosophy</a></p>
+  </section>
+
+  <!-- Shared Footer -->
+  <div id="footer"></div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    async function include(path, target) {
+      const res = await fetch(path);
+      const html = await res.text();
+      document.getElementById(target).innerHTML = html;
+    }
+    include('header.html', 'header');
+    include('footer.html', 'footer');
   </script>
+
 </body>
 </html>
