@@ -13,7 +13,6 @@
     :root {
       --text: #37352F;
       --muted: #555;
-      --accent: #B42A2A;
       --font: 'Inter', sans-serif;
     }
 
@@ -45,11 +44,11 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.2rem;
+      gap: 1.6rem;
     }
     nav a {
       color: var(--text);
-      text-decoration: underline;
+      text-decoration: none;
       font-weight: 600;
       transition: opacity 0.2s;
     }
@@ -63,7 +62,7 @@
       background: url('images/hero.png') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 8rem 1rem;
+      padding: 12rem 1rem; /* Taller hero for stronger visual impact */
     }
     .hero::after {
       content: "";
@@ -75,18 +74,18 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
     }
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 1.8rem;
     }
     .hero a {
       display: inline-block;
       background: #000;
       color: #fff;
-      padding: 0.9rem 1.6rem;
+      padding: 1rem 2rem;
       border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
@@ -123,10 +122,10 @@
     }
     .service:hover {
       transform: translateY(-4px);
-      border-color: var(--accent);
+      border-color: #000;
     }
     .service h3 {
-      color: var(--accent);
+      color: var(--text);
       margin-bottom: 0.8rem;
     }
     .service p {
@@ -160,6 +159,12 @@
       gap: 2rem;
       max-width: 1100px;
       margin: 0 auto 2rem;
+      align-items: start;
+    }
+    .footer-logo img {
+      height: 50px;
+      display: block;
+      margin-bottom: 1rem;
     }
     .footer-column h3 {
       font-size: 1.1rem;
@@ -187,8 +192,9 @@
     }
 
     @media (max-width: 700px) {
-      .hero { padding: 6rem 1rem; }
-      .hero h1 { font-size: 1.9rem; }
+      .hero { padding: 8rem 1rem; }
+      .hero h1 { font-size: 2.1rem; }
+      .footer-inner { grid-template-columns: 1fr; text-align: left; }
     }
   </style>
 </head>
@@ -240,6 +246,10 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/logoOnBlack.png" alt="Kyle’s Karate Logo on Black">
+      </div>
+
       <div class="footer-column">
         <h3>About</h3>
         <a href="about.html">About Us</a>
@@ -247,12 +257,14 @@
         <a href="index.html">Home</a>
         <a href="locations.html">Locations</a>
       </div>
+
       <div class="footer-column">
         <h3>Legal</h3>
         <a href="terms.html">Terms of Service</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="waiver.html">Injury Waiver</a>
       </div>
+
       <div class="footer-column">
         <h3>Services</h3>
         <a href="register.html">Register</a>
