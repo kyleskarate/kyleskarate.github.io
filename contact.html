@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Kyle’s Karate</title>
+  <meta name="description" content="Contact Kyle’s Karate for classes, birthdays, private lessons, events, and more." />
+  <style>
+    /* same CSS as others */
+    :root {
+      --main-bg: #fff;
+      --accent: #e63946;
+      --text: #111;
+      --muted: #555;
+      --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: var(--font); color: var(--text); background: var(--main-bg); line-height:1.5; }
+    header { background: var(--accent); color: white; padding:1.2rem; text-align:center; font-size:1.3rem; }
+    nav { display:flex; justify-content:center; gap:1rem; background:#000; padding:1rem; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; padding:0.4rem 0.9rem; border:2px solid #fff; transition:0.2s; }
+    nav a:hover { background:#fff; color:#000; }
+    section { max-width:900px; margin:0 auto; padding:3rem 1rem; }
+    section h2 { text-align:center; font-size:1.8rem; margin-bottom:1.5rem; }
+    .form-group { margin-bottom:1rem; }
+    .form-group label { display:block; font-weight:600; margin-bottom:0.3rem; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select { width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:4px; }
+    button { background:var(--accent); color:white; border:none; padding:0.7rem 1.2rem; font-size:1rem; cursor:pointer; transition:background 0.2s; }
+    button:hover { background:#c32f3b; }
+    footer { text-align:center; padding:2rem 1rem; background:#000; color:#fff; font-size:0.9rem; }
+    footer a { color:#fff; text-decoration:underline; }
+    @media (max-width:600px) {
+      section h2 { font-size:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>Kyle’s Karate</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Questions about classes, events, private lessons, or how to get involved? Send us a message.</p>
+    <form action="mailto:kyle@kyleskarate.com" method="post" enctype="text/plain">
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="Name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="Email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="Message" rows="6" required></textarea>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+    <p style="margin-top:2rem;"><strong>Email:</strong> <a href="mailto:kyle@kyleskarate.com">kyle@kyleskarate.com</a></p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Kyle’s Karate. All rights reserved.<br>
+    <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="programs.html">Programs</a> · <a href="contact.html">Contact</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
