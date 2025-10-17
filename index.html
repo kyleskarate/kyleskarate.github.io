@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kyle’s Karate | Maryland & Northern Virginia Martial Arts</title>
   <meta name="description" content="The premier martial arts vendor for Maryland and Northern Virginia. Classes, birthdays, and private lessons taught on-site by experienced instructors." />
+
   <style>
     :root {
       --accent: #e63946;
@@ -12,41 +13,19 @@
       --muted: #555;
       --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font); color: var(--text); line-height: 1.5; background: #fff; }
 
-    header {
-      background: #000;
-      color: #fff;
-      padding: 0.8rem 1rem;
-    }
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo img {
-      height: 48px;
-      display: block;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.4rem 0.8rem;
-      border: 2px solid #fff;
-      transition: 0.2s;
-    }
-    nav a:hover {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      color: var(--text);
       background: #fff;
-      color: #000;
+      line-height: 1.5;
+    }
+
+    /* Minimal layout structure to prevent jump before fetch() loads */
+    #header, #footer {
+      min-height: 80px;
+      background: #000;
     }
 
     .hero {
@@ -80,7 +59,6 @@
       padding: 0.8rem 1.5rem;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 0;
       transition: background 0.2s;
     }
     .hero a:hover {
@@ -97,6 +75,7 @@
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
     }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -135,42 +114,18 @@
       background: #c32f3b;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #000;
-      color: #fff;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-    footer p {
-      margin: 0.3rem 0;
-    }
-
     @media (max-width: 700px) {
       .hero { padding: 6rem 1rem; }
       .hero h1 { font-size: 1.9rem; }
-      nav a { font-size: 0.9rem; padding: 0.3rem 0.6rem; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="index.html" class="logo"><img src="images/logo.png" alt="Kyle’s Karate Logo"></a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="programs.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Shared Header -->
+  <div id="header"></div>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>The Premier Martial Arts Vendor for Maryland and Northern Virginia</h1>
@@ -178,6 +133,7 @@
     </div>
   </section>
 
+  <!-- Services Section -->
   <section>
     <h2>Our Services</h2>
     <div class="services-grid">
@@ -199,14 +155,18 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2014–<span id="year"></span> Kyle’s Karate. All rights reserved.</p>
-    <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
-    <p><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="waiver.html">Injury Waiver</a></p>
-  </footer>
+  <!-- Shared Footer -->
+  <div id="footer"></div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    async function include(path, target) {
+      const res = await fetch(path);
+      const html = await res.text();
+      document.getElementById(target).innerHTML = html;
+    }
+    include('header.html', 'header');
+    include('footer.html', 'footer');
   </script>
+
 </body>
 </html>
