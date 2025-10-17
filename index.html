@@ -62,7 +62,7 @@
       background: url('images/hero.png') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 13rem 1rem 9rem;
+      padding: 10rem 1rem 7rem;
     }
     .hero::after {
       content: "";
@@ -76,9 +76,11 @@
       z-index: 1;
       max-width: 800px;
       margin: 0 auto;
+      transform: translateY(-2rem);
     }
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
+      font-weight: 700;
       margin-bottom: 1.8rem;
     }
     .hero a.cta {
@@ -100,13 +102,12 @@
       position: absolute;
       bottom: 2.5rem;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) rotate(-45deg);
       width: 28px;
       height: 28px;
       border-left: 3px solid #fff;
       border-bottom: 3px solid #fff;
-      transform: translateX(-50%) rotate(-45deg);
-      animation: bounce 1.8s infinite;
+      animation: bounce 3s infinite;
       cursor: pointer;
       z-index: 2;
     }
@@ -216,7 +217,7 @@
     }
 
     @media (max-width: 700px) {
-      .hero { padding: 9rem 1rem 7rem; }
+      .hero { padding: 8rem 1rem 6rem; }
       .hero h1 { font-size: 2.2rem; }
       .footer-inner { grid-template-columns: 1fr; text-align: left; }
     }
