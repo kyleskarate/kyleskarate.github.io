@@ -7,37 +7,31 @@
   <meta name="description" content="The premier martial arts vendor for Maryland and Northern Virginia. Classes, birthdays, and private lessons taught on-site by experienced instructors." />
 
   <!-- Favicons -->
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
-<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
-<meta name="application-name" content="&nbsp;"/>
-<meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta name="msapplication-TileImage" content="mstile-144x144.png" />
-<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
-<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
-<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="&nbsp;" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="mstile-144x144.png" />
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-
     html, body {
       max-width: 100%;
       overflow-x: hidden;
     }
-    
     :root {
       --text: #37352F;
       --muted: #555;
@@ -56,6 +50,8 @@
     header {
       background: #fff;
       padding: 0.8rem 1rem;
+      position: relative;
+      z-index: 10;
     }
     .header-inner {
       max-width: 1100px;
@@ -79,8 +75,45 @@
       font-weight: 600;
       transition: opacity 0.2s;
     }
-    nav a:hover {
-      opacity: 0.6;
+    nav a:hover { opacity: 0.6; }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background: #000;
+      border-radius: 3px;
+      transition: all 0.3s;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid #eee;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .mobile-nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 0;
+      display: block;
+    }
+    .mobile-nav.show {
+      display: flex;
     }
 
     /* HERO */
@@ -120,9 +153,7 @@
       text-decoration: none;
       transition: background 0.2s;
     }
-    .hero a.cta:hover {
-      background: #222;
-    }
+    .hero a.cta:hover { background: #222; }
 
     /* DOWN ARROW */
     .down-arrow {
@@ -179,9 +210,7 @@
       margin-bottom: 0.9rem;
       font-size: 1.1rem;
     }
-    .service p {
-      color: var(--muted);
-    }
+    .service p { color: var(--muted); }
     .service a {
       display: inline-block;
       margin-top: 1.2rem;
@@ -193,9 +222,7 @@
       border-radius: 8px;
       transition: background 0.2s;
     }
-    .service a:hover {
-      background: #222;
-    }
+    .service a:hover { background: #222; }
 
     /* FOOTER */
     footer {
@@ -259,130 +286,13 @@
       transition: opacity 0.3s, visibility 0.3s;
       z-index: 99;
     }
-    #scrollTopBtn.show {
-      opacity: 0.9;
-      visibility: visible;
-    }
+    #scrollTopBtn.show { opacity: 0.9; visibility: visible; }
     #scrollTopBtn:hover { background: #222; }
 
-@media (max-width: 700px) {
-  .logo img {
-    height: 40px;
-  }
-  nav {
-    gap: 1rem;
-  }
-  .hero {
-    padding: 6rem 1rem 4rem;
-  }
-  .hero h1 {
-    font-size: 1.8rem;
-    line-height: 1.3;
-  }
-  .service {
-    padding: 1.2rem;
-  }
-  section {
-    padding: 2.5rem 1rem;
-  }
-  .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: left;
-  }
-}
-
-  </style>
-</head>
-<body>
-
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo"><img src="images/logo.png" alt="Kyle’s Karate Logo"></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="register.html">Register</a>
-      <a href="programs.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>The premier martial arts vendor for Maryland and Northern Virginia</h1>
-    <a href="register.html" class="cta">Register</a>
-  </div>
-  <div class="down-arrow" onclick="document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });"></div>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services-grid">
-    <div class="service">
-      <h3>Classes</h3>
-      <p>Kyle’s Karate is a modern self-defense program combining exciting instruction with practical, effective techniques. Classes are taught on-site at schools and facilities.</p>
-      <a href="programs.html">Register</a>
-    </div>
-    <div class="service">
-      <h3>Birthdays</h3>
-      <p>Make your child’s day unforgettable with a high-energy karate party. Kyle’s Karate brings the fun to your location — drills, games, and real karate excitement.</p>
-      <a href="programs.html">Learn More</a>
-    </div>
-    <div class="service">
-      <h3>Private Lessons</h3>
-      <p>Learn at home with a class tailored to your goals. Personalized instruction, flexible scheduling, and a fun, focused environment for kids or adults.</p>
-      <a href="programs.html">Schedule</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <a href="index.html"><img src="images/logoOnBlack.png" alt="Kyle’s Karate Logo on Black"></a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Services</h3>
-      <a href="register.html">Register</a>
-      <a href="classes.html">Class Information</a>
-      <a href="birthdays.html">Birthdays</a>
-      <a href="private-lessons.html">Private Lessons</a>
-      <a href="events.html">Events</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>About</h3>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-      <a href="locations.html">Locations</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Legal</h3>
-      <a href="terms.html">Terms of Service</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="waiver.html">Injury Waiver</a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© Copyright 2014–2025 Kyle’s Karate</p>
-    <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
-  </div>
-</footer>
-
-<div id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑</div>
-
-<script>
-  const scrollTopBtn = document.getElementById('scrollTopBtn');
-  window.addEventListener('scroll',()=>{
-    if(window.scrollY>400){scrollTopBtn.classList.add('show');}
-    else{scrollTopBtn.classList.remove('show');}
-  });
-</script>
-
-</body>
-</html>
+    @media (max-width: 700px) {
+      .logo img { height: 40px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 6rem 1rem 4rem; }
+      .hero h1 { font-size: 1.8rem; line-height: 1.3; }
+      .service { p
