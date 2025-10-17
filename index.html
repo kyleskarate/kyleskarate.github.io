@@ -6,13 +6,14 @@
   <title>Kyle’s Karate | Maryland & Northern Virginia Martial Arts</title>
   <meta name="description" content="The premier martial arts vendor for Maryland and Northern Virginia. Classes, birthdays, and private lessons taught on-site by experienced instructors." />
 
-  <!-- Google Font: Inter -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --text: #111;
+      --text: #37352F;
       --muted: #555;
+      --accent: #B42A2A;
       --font: 'Inter', sans-serif;
     }
 
@@ -21,7 +22,7 @@
       font-family: var(--font);
       color: var(--text);
       background: #fff;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     /* HEADER */
@@ -47,13 +48,13 @@
       gap: 1.2rem;
     }
     nav a {
-      color: #000;
+      color: var(--text);
       text-decoration: underline;
       font-weight: 600;
       transition: opacity 0.2s;
     }
     nav a:hover {
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
     /* HERO */
@@ -68,7 +69,7 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.45);
       z-index: 0;
     }
     .hero-content {
@@ -95,7 +96,7 @@
       background: #222;
     }
 
-    /* SERVICES SECTION */
+    /* SERVICES */
     section {
       max-width: 900px;
       margin: 0 auto;
@@ -105,6 +106,7 @@
       text-align: center;
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
+      color: var(--text);
     }
     .services-grid {
       display: grid;
@@ -117,15 +119,14 @@
       border-radius: 6px;
       padding: 1.5rem;
       text-align: center;
-      transition: transform 0.2s;
+      transition: transform 0.2s, border-color 0.2s;
     }
     .service:hover {
       transform: translateY(-4px);
-      border-color: #000;
+      border-color: var(--accent);
     }
     .service h3 {
-      color: #000;
-      margin-top: 0;
+      color: var(--accent);
       margin-bottom: 0.8rem;
     }
     .service p {
@@ -151,6 +152,7 @@
       background: #000;
       color: #fff;
       padding: 3rem 1rem;
+      margin-top: 3rem;
     }
     .footer-inner {
       display: grid;
@@ -245,14 +247,12 @@
         <a href="index.html">Home</a>
         <a href="locations.html">Locations</a>
       </div>
-
       <div class="footer-column">
         <h3>Legal</h3>
         <a href="terms.html">Terms of Service</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="waiver.html">Injury Waiver</a>
       </div>
-
       <div class="footer-column">
         <h3>Services</h3>
         <a href="register.html">Register</a>
