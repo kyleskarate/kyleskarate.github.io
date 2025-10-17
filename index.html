@@ -32,7 +32,7 @@ nav a:hover{opacity:.6;}
 .mobile-nav a{color:#000;text-decoration:none;font-weight:600;padding:.7rem 0;display:block;}
 
 /* HERO */
-.hero{position:relative;background:url('images/hero.jpg?v=2') center/cover no-repeat;color:#fff;text-align:center;padding:8rem 1rem 6rem;}
+.hero{position:relative;background:url('images/hero.jpg?v=3') center/cover no-repeat;color:#fff;text-align:center;padding:8rem 1rem 6rem;}
 .hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
 .hero h1{font-size:3.2rem;font-weight:900;margin-bottom:2.5rem;}
 .hero a.cta{display:inline-block;background:#000;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:background .2s;}
@@ -70,6 +70,33 @@ footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
 #scrollTopBtn.show{opacity:.9;visibility:visible;}
 #scrollTopBtn:hover{background:#222;}
 
+.books {
+  text-align: center;
+  padding: 4rem 1rem 5rem;
+  background: #fafafa;
+}
+
+.books h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.books img {
+  max-width: 600px;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.books img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+
+    
 /* MOBILE */
 @media(max-width:900px){
   nav{display:none;}
@@ -136,6 +163,14 @@ footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
   </div>
 </section>
 
+<section class="books">
+  <h2>Check Out the Books</h2>
+  <a href="https://www.amazon.com/dp/B0BHQ57JFB" target="_blank">
+    <img src="images/books.jpg" alt="Kyle’s Karate Books">
+  </a>
+</section>
+
+  
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
