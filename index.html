@@ -295,4 +295,121 @@
       .hamburger { display: flex; }
       .hero { padding: 6rem 1rem 4rem; }
       .hero h1 { font-size: 1.8rem; line-height: 1.3; }
-      .service { p
+      .service { padding: 1.2rem; }
+      section { padding: 2.5rem 1rem; }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Kyle’s Karate Logo"></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="programs.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="register.html">Register</a>
+    <a href="programs.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>The premier martial arts vendor for Maryland and Northern Virginia</h1>
+    <a href="register.html" class="cta">Register</a>
+  </div>
+  <div class="down-arrow" onclick="document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });"></div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service">
+      <h3>Classes</h3>
+      <p>Kyle’s Karate is a modern self-defense program combining exciting instruction with practical, effective techniques. Classes are taught on-site at schools and facilities.</p>
+      <a href="programs.html">Register</a>
+    </div>
+    <div class="service">
+      <h3>Birthdays</h3>
+      <p>Make your child’s day unforgettable with a high-energy karate party. Kyle’s Karate brings the fun to your location — drills, games, and real karate excitement.</p>
+      <a href="programs.html">Learn More</a>
+    </div>
+    <div class="service">
+      <h3>Private Lessons</h3>
+      <p>Learn at home with a class tailored to your goals. Personalized instruction, flexible scheduling, and a fun, focused environment for kids or adults.</p>
+      <a href="programs.html">Schedule</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <a href="index.html"><img src="images/logoOnBlack.png" alt="Kyle’s Karate Logo on Black"></a>
+    </div>
+    <div class="footer-column">
+      <h3> </h3>
+    </div>
+    <div class="footer-column">
+      <h3>Services</h3>
+      <a href="register.html">Register</a>
+      <a href="classes.html">Class Information</a>
+      <a href="birthdays.html">Birthdays</a>
+      <a href="private-lessons.html">Private Lessons</a>
+      <a href="events.html">Events</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>About</h3>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="locations.html">Locations</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Legal</h3>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="waiver.html">Injury Waiver</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© Copyright 2014–2025 Kyle’s Karate</p>
+    <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
+  </div>
+</footer>
+
+<div id="scrollTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</div>
+
+<script>
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) scrollTopBtn.classList.add('show');
+    else scrollTopBtn.classList.remove('show');
+  });
+
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>
