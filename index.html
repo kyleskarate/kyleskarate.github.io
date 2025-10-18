@@ -61,6 +61,14 @@ section h2{text-align:center;font-size:1.9rem;margin-bottom:1.8rem;color:var(--t
 .service p{color:var(--muted);}
 .service a{display:inline-block;margin-top:1.2rem;color:#fff;background:#000;padding:.7rem 1.4rem;text-decoration:none;font-weight:600;border-radius:8px;transition:background .2s;}
 .service a:hover{background:#222;}
+.service img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
 
 /* FOOTER */
 footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
@@ -154,23 +162,28 @@ footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
 
 <section id="services">
   <h2>Our Services</h2>
-  <div class="services-grid">
-    <div class="service">
-      <h3>Classes</h3>
-      <p>Kyle’s Karate is a modern self-defense program combining exciting instruction with practical, effective techniques. Classes are taught on-site at schools and facilities.</p>
-      <a href="programs.html">Register</a>
-    </div>
-    <div class="service">
-      <h3>Birthdays</h3>
-      <p>Make your child’s day unforgettable with a high-energy karate party. Kyle’s Karate brings the fun to your location — drills, games, and real karate excitement.</p>
-      <a href="programs.html">Learn More</a>
-    </div>
-    <div class="service">
-      <h3>Private Lessons</h3>
-      <p>Learn at home with a class tailored to your goals. Personalized instruction, flexible scheduling, and a fun, focused environment for kids or adults.</p>
-      <a href="programs.html">Schedule</a>
-    </div>
+<div class="services-grid">
+  <div class="service">
+    <img src="images/classes.jpg" alt="Karate Classes">
+    <h3>Classes</h3>
+    <p>Kyle’s Karate is a modern self-defense program combining exciting instruction with practical, effective techniques. Classes are taught on-site at schools and facilities.</p>
+    <a href="programs.html">Register</a>
   </div>
+
+  <div class="service">
+    <img src="images/birthdays.jpg" alt="Karate Birthday Parties">
+    <h3>Birthdays</h3>
+    <p>Make your child’s day unforgettable with a high-energy karate party. Kyle’s Karate brings the fun to your location — drills, games, and real karate excitement.</p>
+    <a href="programs.html">Learn More</a>
+  </div>
+
+  <div class="service">
+    <img src="images/privateLessons.jpg" alt="Private Karate Lessons">
+    <h3>Private Lessons</h3>
+    <p>Learn at home with a class tailored to your goals. Personalized instruction, flexible scheduling, and a fun, focused environment for kids or adults.</p>
+    <a href="programs.html">Schedule</a>
+  </div>
+</div>
 </section>
 
 <section class="books">
