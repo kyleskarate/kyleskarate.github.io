@@ -37,24 +37,6 @@
     ul{margin-left:1.5rem;color:var(--muted);}
     li{margin-bottom:.7rem;}
 
-    /* image sizing */
-    .img-small {
-      display:block;
-      max-width:420px;
-      width:90%;
-      height:auto;
-      border-radius:12px;
-      margin:1.5rem auto;
-    }
-    .img-large {
-      display:block;
-      max-width:650px;
-      width:100%;
-      height:auto;
-      border-radius:12px;
-      margin:1.5rem auto;
-    }
-
     a.cta{
       display:inline-block;
       background:#000;
@@ -67,10 +49,39 @@
     }
     a.cta:hover{background:#222;}
 
-    /* top buttons */
     .service-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:2rem 0;}
     .service-links a{background:#000;color:#fff;text-decoration:none;padding:0.8rem 1.6rem;border-radius:8px;font-weight:600;transition:background .2s;}
     .service-links a:hover{background:#222;}
+
+    /* image + text rows */
+    .img-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:2rem;
+      margin:2rem 0;
+    }
+    .img-row img{
+      width:45%;
+      border-radius:12px;
+      height:auto;
+    }
+    .img-row p{
+      width:55%;
+    }
+    .img-row.reverse{
+      flex-direction:row-reverse;
+    }
+
+    /* large centered photo */
+    .img-large {
+      display:block;
+      max-width:650px;
+      width:100%;
+      height:auto;
+      border-radius:12px;
+      margin:1.5rem auto;
+    }
 
     /* quote box */
     .quote-box {
@@ -108,6 +119,8 @@
       .logo img{height:36px;}
       .footer-inner{flex-direction:column;align-items:flex-start;gap:2rem;}
       .footer-columns{grid-template-columns:1fr;gap:1.5rem;max-width:100%;}
+      .img-row, .img-row.reverse{flex-direction:column;}
+      .img-row img, .img-row p{width:100%;}
     }
   </style>
 </head>
@@ -153,15 +166,15 @@
 
     <p>Classes are offered at daycares, public schools, and private institutions. Students progress through the Kyle’s Karate “Stripes of White” ranking system, earning visible milestones and building confidence along the way.</p>
 
-    <img src="images/class-preschool.jpg" alt="Preschool students in karate uniforms" class="img-small">
+    <div class="img-row">
+      <p>Kyle’s Karate combines exciting instruction with practical, effective techniques—perfect for developing coordination and concentration in young learners. Each student receives a new uniform and white belt on their first day. The classes include lessons on Stranger-Danger, bullying prevention, discipline, and respect. All techniques are practiced safely, never student-to-student. Belt testing reminders are sent via email a week prior, and parents and family are welcome to attend.</p>
+      <img src="images/class-preschool.jpg" alt="Preschool students in karate uniforms">
+    </div>
 
-    <h3>Preschool & Kindergarten Classes</h3>
-    <p>Kyle’s Karate combines exciting instruction with practical, effective techniques—perfect for developing coordination and concentration in young learners. Each student receives a new uniform and white belt on their first day. The classes include lessons on Stranger-Danger, bullying prevention, discipline, and respect. All techniques are practiced safely, never student-to-student. Belt testing reminders are sent via email a week prior, and parents and family are welcome to attend.</p>
-
-    <img src="images/class-belt.jpg" alt="Karate student receiving belt" class="img-small">
-
-    <h3>After-School Classes</h3>
-    <p>Our afterschool karate program offers a well-rounded experience, teaching students essential martial arts skills and self-defense techniques. Discipline, respect, and self-confidence are integral to our classes, which also cover street smarts, de-escalation, and conflict resolution—all taught conveniently at your child’s school.</p>
+    <div class="img-row reverse">
+      <p>Our afterschool karate program offers a well-rounded experience, teaching students essential martial arts skills and self-defense techniques. Discipline, respect, and self-confidence are integral to our classes, which also cover street smarts, de-escalation, and conflict resolution—all taught conveniently at your child’s school.</p>
+      <img src="images/class-belt.jpg" alt="Karate student receiving belt">
+    </div>
 
     <img src="images/class-kicking.jpg" alt="Students lined up practicing kicks" class="img-large">
 
