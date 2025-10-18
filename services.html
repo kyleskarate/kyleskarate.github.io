@@ -36,7 +36,17 @@
     p{color:var(--muted);margin-bottom:1rem;}
     ul{margin-left:1.5rem;color:var(--muted);}
     li{margin-bottom:.7rem;}
-    img{
+
+    /* image sizing */
+    .img-small {
+      display:block;
+      max-width:420px;
+      width:90%;
+      height:auto;
+      border-radius:12px;
+      margin:1.5rem auto;
+    }
+    .img-large {
       display:block;
       max-width:650px;
       width:100%;
@@ -61,6 +71,25 @@
     .service-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:2rem 0;}
     .service-links a{background:#000;color:#fff;text-decoration:none;padding:0.8rem 1.6rem;border-radius:8px;font-weight:600;transition:background .2s;}
     .service-links a:hover{background:#222;}
+
+    /* quote box */
+    .quote-box {
+      background:#f3f3f3;
+      border-left:5px solid #000;
+      padding:1.5rem 1.5rem;
+      margin:2rem 0;
+      font-style:italic;
+      color:#444;
+      border-radius:6px;
+    }
+    .quote-box em {
+      display:block;
+      text-align:right;
+      margin-top:0.8rem;
+      font-weight:600;
+      color:#000;
+      font-style:normal;
+    }
 
     footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
     .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;max-width:1000px;margin:0 auto 2rem;}
@@ -124,22 +153,25 @@
 
     <p>Classes are offered at daycares, public schools, and private institutions. Students progress through the Kyle’s Karate “Stripes of White” ranking system, earning visible milestones and building confidence along the way.</p>
 
-    <img src="images/class-preschool.jpg" alt="Preschool students in karate uniforms">
+    <img src="images/class-preschool.jpg" alt="Preschool students in karate uniforms" class="img-small">
 
     <h3>Preschool & Kindergarten Classes</h3>
     <p>Kyle’s Karate combines exciting instruction with practical, effective techniques—perfect for developing coordination and concentration in young learners. Each student receives a new uniform and white belt on their first day. The classes include lessons on Stranger-Danger, bullying prevention, discipline, and respect. All techniques are practiced safely, never student-to-student. Belt testing reminders are sent via email a week prior, and parents and family are welcome to attend.</p>
 
-    <img src="images/class-belt.jpg" alt="Karate student receiving belt">
+    <img src="images/class-belt.jpg" alt="Karate student receiving belt" class="img-small">
 
     <h3>After-School Classes</h3>
     <p>Our afterschool karate program offers a well-rounded experience, teaching students essential martial arts skills and self-defense techniques. Discipline, respect, and self-confidence are integral to our classes, which also cover street smarts, de-escalation, and conflict resolution—all taught conveniently at your child’s school.</p>
 
-    <img src="images/class-kicking.jpg" alt="Students lined up practicing kicks">
+    <img src="images/class-kicking.jpg" alt="Students lined up practicing kicks" class="img-large">
 
     <h3>A Little About the Style</h3>
     <p>Kyle’s Karate blends modern practicality with traditional discipline. Students train in Kicking, Punching, Blocking, and Awareness, developing both physical and mental skill. The program runs year-round at multiple schools for convenience.</p>
 
-    <p>“Teaching is my passion, and I strive to make sure every parent and child enjoys the program as much as I do running it.”<br><em>— Kyle Mitcham</em></p>
+    <div class="quote-box">
+      “Teaching is my passion, and I strive to make sure every parent and child enjoys the program as much as I do running it.”
+      <em>— Kyle Mitcham</em>
+    </div>
 
     <div style="text-align:center;margin-top:1.8rem;">
       <a href="register.html" class="cta" style="margin-right:0.8rem;">Register</a>
