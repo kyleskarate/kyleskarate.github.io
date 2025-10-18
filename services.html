@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs & Services | Kyle’s Karate</title>
+  <meta name="description" content="Kyle’s Karate offers enrichment classes, afterschool programs, private lessons, birthday parties, and events in the DC, Maryland, and Virginia area." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html,body{max-width:100%;overflow-x:hidden;}
+    :root{--text:#37352F;--muted:#555;--font:'Inter',sans-serif;}
+    *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth;}
+    body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;}
+
+    header{background:#fff;padding:0.8rem 1rem;position:relative;z-index:10;}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+    .logo img{height:52px;display:block;}
+    nav{display:flex;gap:1.6rem;}
+    nav a{color:var(--text);text-decoration:none;font-weight:600;transition:opacity .2s;}
+    nav a:hover{opacity:.6;}
+    .hamburger{display:none;flex-direction:column;justify-content:space-between;width:22px;height:16px;cursor:pointer;}
+    .hamburger span{display:block;height:2px;background:#000;border-radius:3px;transition:all .3s ease;}
+    .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.active span:nth-child(2){opacity:0;}
+    .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;flex-direction:column;background:#fff;position:absolute;top:100%;left:0;width:100%;border-top:1px solid #eee;padding:1rem 0;text-align:center;opacity:0;transform:translateY(-10px);transition:opacity .25s,transform .25s;}
+    .mobile-nav.show{display:flex;opacity:1;transform:translateY(0);}
+    .mobile-nav a{color:#000;text-decoration:none;font-weight:600;padding:.7rem 0;display:block;}
+
+    main{max-width:900px;margin:4rem auto;padding:0 1rem;}
+    section{margin-bottom:4rem;}
+    h1{text-align:center;font-size:2.3rem;margin-bottom:2rem;}
+    h2{font-size:1.6rem;margin-top:2rem;margin-bottom:.8rem;}
+    h3{font-size:1.3rem;margin-top:1.5rem;margin-bottom:.6rem;}
+    p{color:var(--muted);margin-bottom:1rem;}
+    ul{margin-left:1.5rem;color:var(--muted);}
+    li{margin-bottom:.7rem;}
+    img{width:100%;border-radius:12px;margin:1.5rem 0;}
+    a.cta{display:inline-block;background:#000;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:background .2s;}
+    a.cta:hover{background:#222;}
+
+    footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
+    .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;max-width:1000px;margin:0 auto 2rem;}
+    .footer-logo{flex-shrink:0;}
+    .footer-logo a img{height:85px;display:block;margin-bottom:1.5rem;}
+    .footer-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:2.3rem;max-width:640px;}
+    .footer-column h2{font-size:1.2rem;margin-bottom:0.8rem;font-weight:700;}
+    .footer-column a{display:block;color:#fff;text-decoration:none;margin:0.3rem 0;transition:opacity 0.2s;}
+    .footer-column a:hover{opacity:0.7;}
+    .footer-bottom{text-align:center;font-size:0.9rem;border-top:1px solid #333;padding-top:1.5rem;}
+    .footer-bottom p{margin:0.3rem 0;}
+
+    @media(max-width:900px){
+      nav{display:none;}
+      .hamburger{display:flex;}
+      .logo img{height:36px;}
+      .footer-inner{flex-direction:column;align-items:flex-start;gap:2rem;}
+      .footer-columns{grid-template-columns:1fr;gap:1.5rem;max-width:100%;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Kyle’s Karate Logo"></a>
+    <nav>
+      <a href="register.html">Register</a>
+      <a href="programs.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://kyleskarate.printful.me/kids-youth-clothing">Merch</a>
+    </nav>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="register.html">Register</a>
+    <a href="programs.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://kyleskarate.printful.me/kids-youth-clothing">Merch</a>
+  </div>
+</header>
+
+<main>
+  <h1>Programs & Services</h1>
+
+  <section id="enrichment">
+    <h2>Enrichment & Afterschool Programs</h2>
+    <p>Experience a martial arts program that will engage your child as they learn the basics of kicking, punching, and blocking—all right at their school or daycare! This is a complete program, offering uniforms, belts, and tests along with top-notch instruction. No need for extra travel; your child can learn right where they are, saving you time.</p>
+
+    <p>Children's classes are offered at various locations, including daycares, public schools, and private institutions. Students will learn techniques and skills, earning merit awards and progressing through the Kyle’s Karate “Stripes of White” ranking system. Visible milestones mark their accomplishments.</p>
+
+    <img src="images/17834996_624037274468446_432896386740791991_o.jpg" alt="Kids practicing karate in school">
+
+    <h3>Preschool & Kindergarten Classes</h3>
+    <p>Kyle’s Karate combines exciting instruction with practical, effective techniques—perfect for developing coordination and concentration in young learners. Each student receives a new uniform and white belt on their first day. The classes include lessons on Stranger-Danger, bullying prevention, discipline, and respect. All techniques are practiced safely, never student-to-student. Belt testing reminders are sent via email a week prior, and parents and family are welcome to attend.</p>
+
+    <h3>After-School Classes</h3>
+    <p>Our afterschool karate program offers a well-rounded experience, teaching students essential martial arts skills and self-defense techniques. Discipline, respect, and self-confidence are integral to our classes, which also cover street smarts, de-escalation, and conflict resolution—all taught conveniently at your child’s school.</p>
+
+    <img src="images/17038528_605230559682451_6876081354850663459_o.jpg" alt="Afterschool karate class in progress">
+
+    <h3>A Little About the Style</h3>
+    <p>Kyle’s Karate is a modern martial arts class focusing on developing excellent technique and practicality. Study areas include Kicking, Punching, Blocking, Situational Awareness, and Physical and Mental Discipline. The program runs throughout the school year at various locations, offering convenience for busy parents. Kyle has also authored a book with demonstrative photographs and detailed descriptions of the techniques taught in class.</p>
+
+    <p>“Teaching is my passion, and I strive to make sure that every parent and child enjoys the program as much as I do running it.”<br><em>— Kyle Mitcham</em></p>
+
+    <a href="register.html" class="cta">Register</a>
+  </section>
+
+  <section id="private">
+    <h2>At-Home Private Lessons</h2>
+    <p><strong>Contact for current rates</strong></p>
+    <p>Experience premium one-on-one or small group karate instruction delivered right to your doorstep in Potomac, Bethesda, Tysons, and surrounding areas of Montgomery County, Fairfax County, and Loudoun County. Our at-home private lessons offer personalized training for all ages and skill levels.</p>
+
+    <p><strong>Convenience & Flexibility:</strong> Receive invoices via email and pay with just a few taps. Enjoy the ease of pay-as-you-go scheduling with no contracts or obligations. Our flexible week-to-week structure lets you train at your own pace.</p>
+
+    <p><strong>Community & Longevity:</strong> Many families have trained with us for years, forming small parent groups or continuing private instruction long-term. If we don’t meet, there’s no charge—just reliable, high-quality karate instruction.</p>
+
+    <a href="contact.html" class="cta">Contact for Booking</a>
+  </section>
+
+  <section id="birthdays">
+    <h2>Karate Birthday Parties</h2>
+    <p><strong>Current Rate:</strong> $400 for one hour of thrilling karate excitement</p>
+    <p>Looking for a unique birthday celebration your child will never forget? Kyle's Karate offers an incredible hour of karate fun—complete with instruction, demonstrations, and real board-breaking at your chosen location. Indoors or outdoors, all you need is flat, open space—we’ll bring the rest.</p>
+
+    <ul>
+      <li><strong>Exciting Instruction:</strong> A full hour of engaging karate lessons for all ages.</li>
+      <li><strong>Interactive Demonstrations:</strong> Watch and participate in thrilling karate demos.</li>
+      <li><strong>Board Breaking:</strong> A crowd favorite—kids safely break real boards with guidance.</li>
+      <li><strong>Customizable Options:</strong> Gift bags, favors, and supplies available at extra cost.</li>
+    </ul>
+
+    <p>Bring the excitement of karate to your next birthday celebration and make it unforgettable.</p>
+    <blockquote>“Kyle’s Karate was the perfect experience for my son’s birthday party! All of the kids loved it! Kyle led with excellence and engaged the kids the entire time. Not only was it a blast for the kids but they also learned respect, self-defense, and many other skills!”<br><em>— Kim E., Mother</em></blockquote>
+
+    <a href="contact.html" class="cta">Contact for Booking</a>
+  </section>
+
+  <section id="events">
+    <h2>Events, Demos & Seminars</h2>
+    <p>Kyle's Karate offers a diverse range of event services in Potomac, Bethesda, Tysons, and the surrounding areas of Montgomery, Fairfax, and Loudoun Counties. From corporate team-building to community events, we bring the energy and focus of karate to every setting.</p>
+
+    <h3>Corporate Events & Team Building</h3>
+    <p>Boost teamwork and motivation with interactive karate sessions designed for corporate wellness and engagement. Perfect for team-building days, wellness events, and motivational programs.</p>
+
+    <h3>Interactive Karate Experiences</h3>
+    <p>Add excitement to your festival or special event with a hands-on karate demo or group experience suitable for all ages and audiences.</p>
+
+    <h3>Seminars & Workshops</h3>
+    <p>We offer specialized seminars and workshops tailored to schools, community groups, and organizations—introducing participants to martial arts, focus, and discipline in an engaging format.</p>
+
+    <a href="contact.html" class="cta">Contact to Plan Your Event</a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <a href="index.html"><img src="images/logoOnBlack.png" alt="Kyle’s Karate Logo on Black"></a>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h2>Services</h2>
+        <a href="register.html">Register</a>
+        <a href="programs.html">Services</a>
+        <a href="birthdays.html">Birthdays</a>
+        <a href="private-lessons.html">Private Lessons</a>
+        <a href="events.html">Events</a>
+      </div>
+      <div class="footer-column">
+        <h2>About</h2>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="locations.html">Locations</a>
+      </div>
+      <div class="footer-column">
+        <h2>Legal</h2>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="waiver.html">Injury Waiver</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© Copyright 2014–2025 Kyle’s Karate</p>
+    <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
+  </div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+function toggleMenu(){
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
