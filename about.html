@@ -43,14 +43,45 @@ li{margin-bottom:.7rem;}
 .service-links a{background:#000;color:#fff;text-decoration:none;padding:0.8rem 1.6rem;border-radius:8px;font-weight:600;transition:background .2s;}
 .service-links a:hover{background:#222;}
 
+a.cta{
+  display:inline-block;
+  background:#000;
+  color:#fff;
+  padding:1rem 2rem;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  transition:background .2s;
+  margin-right:0.6rem;
+}
+a.cta:hover{background:#222;}
+
 .img-side{display:flex;align-items:center;gap:2rem;margin:2rem 0;}
 .img-side img{width:45%;border-radius:12px;}
 .img-side p{width:55%;}
 .img-side.reverse{flex-direction:row-reverse;}
 
 /* Collapsible sections for locations */
-.collapsible{background:#f7f7f7;border:1px solid #ddd;border-radius:8px;padding:1rem;margin-top:1rem;cursor:pointer;font-weight:600;position:relative;}
-.collapsible::after{content:'+';position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);font-size:1.4rem;}
+.collapsible{
+  background:#f7f7f7;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:1rem 3rem 1rem 1rem;
+  margin-top:1rem;
+  cursor:pointer;
+  font-weight:600;
+  position:relative;
+  text-align:left;
+}
+.collapsible::after{
+  content:'+';
+  position:absolute;
+  right:1.2rem;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:1.4rem;
+  font-weight:700;
+}
 .collapsible.active::after{content:'–';}
 .content{max-height:0;overflow:hidden;transition:max-height 0.4s ease;padding-left:0.5rem;}
 .content.open{padding-top:0.8rem;max-height:2000px;}
@@ -132,10 +163,19 @@ footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
       <li><strong>In-House Classes:</strong> Full uniform and white belt provided for newcomers.</li>
       <li><strong>Promotions & Events:</strong> Belt promotions, summer camps, and more throughout the year.</li>
     </ul>
+    <div style="text-align:center;margin-top:1.8rem;">
+      <a href="register.html" class="cta">Register</a>
+      <a href="contact.html" class="cta">Add to Your School</a>
+    </div>
   </section>
 
   <section id="classes">
     <h2>More on Classes</h2>
+    <p>Our enrichment and afterschool programs teach focus, confidence, and respect through structured karate lessons that kids love. Every student begins with a white belt and uniform, learning essential skills safely and progressively.</p>
+    <div style="text-align:center;margin-top:1rem;margin-bottom:1.5rem;">
+      <a href="services.html#enrichment" class="cta">Learn More About Classes</a>
+    </div>
+
     <div class="img-side reverse">
       <p><strong>Kyle Mitcham, Owner</strong><br><br>Kyle “Coach Kyle” Mitcham has been teaching martial arts since 2009. A Black Belt in Tang Soo Do with training in Muay Thai and other disciplines, Kyle is not just a practitioner but an innovator. He developed his own modern system of <em>American Karate</em> — practical, refined, and outlined in his book. Combining traditional wisdom with modern insight, Kyle’s Karate delivers an authentic and exciting experience for all ages.</p>
       <img src="images/class-owner.jpg" alt="Kyle Mitcham teaching students">
@@ -145,11 +185,10 @@ footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
   <section id="philosophy">
     <h2>Style & Philosophy</h2>
     <p>Kyle’s Karate is a unique new style of American Karate emphasizing strong technique, practicality, and mindset. The system distills the essence of traditional martial arts into clear, useful principles for modern students.</p>
-    <p>Discover more through Kyle’s books on Amazon:</p>
-    <p>
-      <a href="https://www.amazon.com/dp/B0BHQ57JFB" class="cta" target="_blank">Get the Book on Style</a>
-      <a href="https://www.amazon.com/dp/B0BHQ5KLVW" class="cta" target="_blank">Get the Book on Combat Philosophy</a>
-    </p>
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="https://www.amazon.com/dp/B0BHQ57JFB" target="_blank" class="cta">Get the Book on Style</a>
+      <a href="https://www.amazon.com/dp/B0BHQ57JFB" target="_blank" class="cta">Get the Book on Combat Philosophy</a>
+    </div>
   </section>
 
   <section id="locations">
@@ -189,7 +228,9 @@ footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
       </ul>
     </div>
 
-    <p style="margin-top:1.5rem;">Interested in bringing Kyle’s Karate to your school, daycare, or event? <a href="contact.html" class="cta">Get in Touch</a></p>
+    <div style="text-align:center;margin-top:1.8rem;">
+      <a href="contact.html" class="cta">Get in Touch</a>
+    </div>
   </section>
 </main>
 
