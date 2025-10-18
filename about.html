@@ -4,153 +4,255 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Kyle’s Karate</title>
-  <meta name="description" content="Learn about Kyle’s Karate, a traveling martial arts vendor serving Maryland and Virginia with classes, birthdays, private lessons, and events." />
+  <meta name="description" content="Learn about Kyle’s Karate — the program, philosophy, and locations across Maryland and Virginia." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --accent: #e63946;
-      --text: #111;
-      --muted: #555;
-      --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: var(--font);
-      color: var(--text);
-      background: #fff;
-      line-height: 1.5;
-    }
+html,body{max-width:100%;overflow-x:hidden;}
+:root{--text:#37352F;--muted:#555;--font:'Inter',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;}
 
-    /* Prevent layout jump before fetch includes load */
-    #header, #footer {
-      min-height: 80px;
-      background: #000;
-    }
+/* HEADER */
+header{background:#fff;padding:0.8rem 1rem;position:relative;z-index:10;}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+.logo img{height:52px;display:block;}
+nav{display:flex;gap:1.6rem;}
+nav a{color:var(--text);text-decoration:none;font-weight:600;transition:opacity .2s;}
+nav a:hover{opacity:.6;}
+.hamburger{display:none;flex-direction:column;justify-content:space-between;width:22px;height:16px;cursor:pointer;}
+.hamburger span{display:block;height:2px;background:#000;border-radius:3px;transition:all .3s ease;}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav{display:none;flex-direction:column;background:#fff;position:absolute;top:100%;left:0;width:100%;border-top:1px solid #eee;padding:1rem 0;text-align:center;opacity:0;transform:translateY(-10px);transition:opacity .25s,transform .25s;}
+.mobile-nav.show{display:flex;opacity:1;transform:translateY(0);}
+.mobile-nav a{color:#000;text-decoration:none;font-weight:600;padding:.7rem 0;display:block;}
 
-    .hero {
-      position: relative;
-      background: url('images/hero.png') center/cover no-repeat;
-      color: #fff;
-      text-align: center;
-      padding: 7rem 1rem;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .hero h1 {
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-    }
+/* MAIN */
+main{max-width:900px;margin:4rem auto;padding:0 1rem;}
+h1{text-align:center;font-size:2.3rem;margin-bottom:2rem;}
+section{margin-bottom:4rem;}
+h2{font-size:1.6rem;margin-top:2rem;margin-bottom:.8rem;}
+h3{font-size:1.3rem;margin-top:1.5rem;margin-bottom:.6rem;}
+p{color:var(--muted);margin-bottom:1rem;}
+ul{margin-left:1.5rem;color:var(--muted);}
+li{margin-bottom:.7rem;}
 
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3rem 1rem;
-    }
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    p {
-      margin-bottom: 1rem;
-    }
+.service-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:2rem 0;}
+.service-links a{background:#000;color:#fff;text-decoration:none;padding:0.8rem 1.6rem;border-radius:8px;font-weight:600;transition:background .2s;}
+.service-links a:hover{background:#222;}
 
-    .offer-list {
-      margin: 1rem 0 2rem;
-      padding-left: 1.2rem;
-    }
-    .offer-list li {
-      margin-bottom: 0.5rem;
-    }
+.img-side{display:flex;align-items:center;gap:2rem;margin:2rem 0;}
+.img-side img{width:45%;border-radius:12px;}
+.img-side p{width:55%;}
+.img-side.reverse{flex-direction:row-reverse;}
 
-    .owner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .owner img {
-      width: 260px;
-      border-radius: 8px;
-    }
-    .owner-info h3 {
-      margin: 0 0 0.5rem;
-      color: var(--accent);
-    }
+/* Collapsible sections for locations */
+.collapsible{background:#f7f7f7;border:1px solid #ddd;border-radius:8px;padding:1rem;margin-top:1rem;cursor:pointer;font-weight:600;position:relative;}
+.collapsible::after{content:'+';position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);font-size:1.4rem;}
+.collapsible.active::after{content:'–';}
+.content{max-height:0;overflow:hidden;transition:max-height 0.4s ease;padding-left:0.5rem;}
+.content.open{padding-top:0.8rem;max-height:2000px;}
 
-    @media (max-width: 700px) {
-      .hero { padding: 5rem 1rem; }
-      .hero h1 { font-size: 1.8rem; }
-      .owner { flex-direction: column; align-items: flex-start; }
-      .owner img { width: 100%; max-width: 400px; }
-    }
+/* FOOTER */
+footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;max-width:1000px;margin:0 auto 2rem;}
+.footer-logo{flex-shrink:0;}
+.footer-logo a img{height:85px;display:block;margin-bottom:1.5rem;}
+.footer-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:2.3rem;max-width:640px;}
+.footer-column h2{font-size:1.2rem;margin-bottom:0.8rem;font-weight:700;}
+.footer-column a{display:block;color:#fff;text-decoration:none;margin:0.3rem 0;transition:opacity 0.2s;}
+.footer-column a:hover{opacity:0.7;}
+.footer-bottom{text-align:center;font-size:0.9rem;border-top:1px solid #333;padding-top:1.5rem;}
+.footer-bottom p{margin:0.3rem 0;}
+
+/* SCROLL TOP */
+#scrollTopBtn{position:fixed;bottom:2rem;right:2rem;background:#000;color:#fff;border:2px solid #fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:99;}
+#scrollTopBtn.show{opacity:.9;visibility:visible;}
+#scrollTopBtn:hover{background:#222;}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{display:none;}
+  .hamburger{display:flex;}
+  .logo img{height:36px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:2rem;}
+  .footer-columns{grid-template-columns:1fr;gap:1.5rem;max-width:100%;}
+  .img-side,.img-side.reverse{flex-direction:column;}
+  .img-side img,.img-side p{width:100%;}
+}
   </style>
 </head>
+
 <body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Kyle’s Karate Logo"></a>
+    <nav>
+      <a href="register.html">Register</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://kyleskarate.printful.me/kids-youth-clothing">Merch</a>
+    </nav>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="register.html">Register</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://kyleskarate.printful.me/kids-youth-clothing">Merch</a>
+  </div>
+</header>
 
-  <!-- Shared Header -->
-  <div id="header"></div>
+<main>
+  <h1>About Kyle’s Karate</h1>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>About the Program</h1>
+  <div class="service-links">
+    <a href="#program">Program</a>
+    <a href="#classes">Classes</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="#locations">Locations</a>
+  </div>
+
+  <section id="program">
+    <h2>About the Program</h2>
+    <p>Kyle’s Karate is a traveling martial arts vendor offering enrichment, after-school programs, birthdays, at-home private lessons, and special events across Maryland and Virginia — including Potomac, McLean, Fairfax, Montgomery County, and Loudoun County.</p>
+    <ul>
+      <li><strong>Foundation Martial Arts Class:</strong> Basics, stranger-danger, bully resolution, and focus — taught by a team trained and supervised by Kyle.</li>
+      <li><strong>Birthday Parties:</strong> Custom karate-themed parties for unforgettable fun.</li>
+      <li><strong>At-Home Lessons:</strong> Personalized one-on-one instruction at home.</li>
+      <li><strong>Corporate Events:</strong> Engaging team-building experiences.</li>
+      <li><strong>Safe Practice:</strong> Contact only with equipment, not partners.</li>
+      <li><strong>Highly Rated & Insured:</strong> Known for fun classes and strong life skills.</li>
+      <li><strong>In-House Classes:</strong> Full uniform and white belt provided for newcomers.</li>
+      <li><strong>Promotions & Events:</strong> Belt promotions, summer camps, and more throughout the year.</li>
+    </ul>
+  </section>
+
+  <section id="classes">
+    <h2>More on Classes</h2>
+    <div class="img-side reverse">
+      <p><strong>Kyle Mitcham, Owner</strong><br><br>Kyle “Coach Kyle” Mitcham has been teaching martial arts since 2009. A Black Belt in Tang Soo Do with training in Muay Thai and other disciplines, Kyle is not just a practitioner but an innovator. He developed his own modern system of <em>American Karate</em> — practical, refined, and outlined in his book. Combining traditional wisdom with modern insight, Kyle’s Karate delivers an authentic and exciting experience for all ages.</p>
+      <img src="images/class-owner.jpg" alt="Kyle Mitcham teaching students">
     </div>
   </section>
 
-  <section>
-    <p><strong>Kyle’s Karate</strong> is a traveling martial arts vendor that offers enrichment, after-school programs, birthdays, at-home private lessons, and special events in Maryland and Virginia, including areas like Potomac, McLean, Fairfax, Montgomery County, and Loudoun County.</p>
+  <section id="philosophy">
+    <h2>Style & Philosophy</h2>
+    <p>Kyle’s Karate is a unique new style of American Karate emphasizing strong technique, practicality, and mindset. The system distills the essence of traditional martial arts into clear, useful principles for modern students.</p>
+    <p>Discover more through Kyle’s books on Amazon:</p>
+    <p>
+      <a href="https://www.amazon.com/dp/B0BHQ57JFB" class="cta" target="_blank">Get the Book on Style</a>
+      <a href="https://www.amazon.com/dp/B0BHQ5KLVW" class="cta" target="_blank">Get the Book on Combat Philosophy</a>
+    </p>
+  </section>
 
-    <h2>What We Offer</h2>
-    <ul class="offer-list">
-      <li><strong>Foundation Martial Arts Class:</strong> Taught by a team trained and supervised by Kyle, focusing on the basics, stranger-danger, bully-conflict resolution, and fostering a confident, focused attitude.</li>
-      <li><strong>Birthday Parties:</strong> Customizable karate-themed parties for unforgettable fun.</li>
-      <li><strong>At-Home Private Lessons:</strong> Personalized one-on-one instruction in the comfort of your home.</li>
-      <li><strong>Corporate Events:</strong> Engaging and interactive experiences tailored to your needs.</li>
-      <li><strong>Safe Practice:</strong> Students make contact only with the equipment, ensuring a fun and safe experience.</li>
-      <li><strong>Highly Rated and Insured:</strong> Loved by students and parents alike for our fun classes and life skills teaching.</li>
-      <li><strong>In-House Classes:</strong> All necessary equipment is provided, including a full uniform and white belt for newcomers.</li>
-      <li><strong>Promotions and Special Events:</strong> Several belt promotions each school year, summer camps, and more.</li>
-    </ul>
+  <section id="locations">
+    <h2>See Where We Operate</h2>
 
-    <div class="owner">
-      <img src="images/kyle.jpg" alt="Kyle Mitcham teaching karate">
-      <div class="owner-info">
-        <h3>Kyle Mitcham, Owner</h3>
-        <p>Kyle Mitcham, or Coach Kyle, has been teaching martial arts since 2009, holding a black belt in traditional Tangsoodo and training in disciplines like Muay Thai. He's not just a practitioner but an innovator, having personally developed a unique style of American Karate.</p>
-        <p>Rooted in practicality, this style is not a casual invention but a carefully crafted methodology, outlined in his book. Combining traditional wisdom with modern insight, Kyle’s Karate offers an engaging and authentic experience.</p>
+    <button class="collapsible">Current Schools & Programs</button>
+    <div class="content">
+      <ul>
+        <li><strong>Bethesda Country Day School</strong> — Bethesda, MD — Fall 2014–Present</li>
+        <li><strong>Chesterbrook Academy</strong> — Olney, MD — Fall 2015–Present</li>
+        <li><strong>Chesterbrook Academy</strong> — Aldie, VA — Fall 2022–Present</li>
+        <li><strong>Charles E. Smith Jewish Day School</strong> — Rockville, MD — Fall 2018–Present</li>
+        <li><strong>Henrietta Lacks & Hovatter Elementary</strong> — Aldie, VA — Fall 2025–Present</li>
+        <li><strong>Lewinsville Montessori</strong> — McLean, VA — Summer 2022–Present</li>
+        <li><strong>The Hill School</strong> — Middleburg, VA — January 2025–Present</li>
+        <li><strong>Saint Luke School</strong> — McLean, VA — September 2025–Present</li>
+        <li><strong>Seneca Academy</strong> — Darnestown, MD — January 2017–Present</li>
+        <li><strong>Sherman ECC at Har Shalom</strong> — Potomac, MD — January 2020–Present</li>
+        <li><strong>Westgate Child Center</strong> — McLean, VA — Fall 2018–Present</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">Past Schools</button>
+    <div class="content">
+      <ul>
+        <li>Chesterbrook Academy — Gaithersburg, MD — 2015–2020</li>
+        <li>Chesterbrook Academy — Fairfax, VA — 2016–2018</li>
+        <li>Chesterbrook Academy — Alexandria, VA — 2017–2023</li>
+        <li>Chesterbrook Academy — Herndon, VA — 2016–2018</li>
+        <li>Chesterbrook Academy — Ashburn, VA — 2017–2022</li>
+        <li>Chesterbrook Academy — Germantown, MD — 2017–2022</li>
+        <li>Child Development Center at Dept. of Labor — DC — 2017–2018</li>
+        <li>Sommers Childcare — Alexandria, VA — 2022–2023</li>
+        <li>Temple Isaiah — Fulton, MD — 2018–2019</li>
+        <li>Westminster School — Annandale, VA — 2015–2018</li>
+        <li>Wyngate Elementary — Bethesda, MD — 2016–2018</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:1.5rem;">Interested in bringing Kyle’s Karate to your school, daycare, or event? <a href="contact.html" class="cta">Get in Touch</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <a href="index.html"><img src="images/logoOnBlack.png" alt="Kyle’s Karate Logo on Black"></a>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h2>Services</h2>
+        <a href="register.html">Register</a>
+        <a href="services.html">Services</a>
+        <a href="birthdays.html">Birthdays</a>
+        <a href="private-lessons.html">Private Lessons</a>
+        <a href="events.html">Events</a>
+      </div>
+      <div class="footer-column">
+        <h2>About</h2>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="locations.html">Locations</a>
+      </div>
+      <div class="footer-column">
+        <h2>Legal</h2>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="waiver.html">Injury Waiver</a>
       </div>
     </div>
+  </div>
 
-    <h2 style="margin-top:3rem;">Style and Philosophy</h2>
-    <p>Kyle’s Karate is a unique new style of American Karate, focusing on excellent technique and practicality. Discover more through Kyle’s books available on Amazon:</p>
-    <p><a href="https://www.amazon.com/s?k=kyle+mitcham+karate" target="_blank">Get the book on style</a> · <a href="https://www.amazon.com/s?k=kyle+mitcham+karate" target="_blank">Get the book on combat philosophy</a></p>
-  </section>
+  <div class="footer-bottom">
+    <p>© Copyright 2014–2025 Kyle’s Karate</p>
+    <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
+  </div>
+</footer>
 
-  <!-- Shared Footer -->
-  <div id="footer"></div>
+<div id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑</div>
 
-  <script>
-    async function include(path, target) {
-      const res = await fetch(path);
-      const html = await res.text();
-      document.getElementById(target).innerHTML = html;
-    }
-    include('header.html', 'header');
-    include('footer.html', 'footer');
-  </script>
+<script>
+const scrollTopBtn=document.getElementById('scrollTopBtn');
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
 
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>400){scrollTopBtn.classList.add('show');}
+  else{scrollTopBtn.classList.remove('show');}
+});
+
+function toggleMenu(){
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('show');
+}
+
+/* collapsible logic */
+document.querySelectorAll('.collapsible').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.classList.toggle('active');
+    const content=btn.nextElementSibling;
+    content.classList.toggle('open');
+  });
+});
+</script>
 </body>
 </html>
