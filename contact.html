@@ -39,6 +39,18 @@
     .btn-row a{display:inline-block;background:#000;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:background .2s;}
     .btn-row a:hover{background:#222;}
 
+    /* FORM WRAPPER */
+    .form-wrapper {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .form-wrapper iframe {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+
     /* FOOTER */
     footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
     .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;max-width:1000px;margin:0 auto 2rem;}
@@ -88,7 +100,7 @@
 
 <main>
   <h1>Contact</h1>
-  <div style="max-width:900px;margin:0 auto;">
+  <div class="form-wrapper">
     <iframe
       data-tally-src="https://tally.so/embed/3Neg50?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
       loading="lazy"
@@ -101,6 +113,17 @@
       title="Contact Us">
     </iframe>
   </div>
+  <script>
+    var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+      if(typeof Tally!=="undefined")Tally.loadEmbeds();
+      else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(e=>e.src=e.dataset.tallySrc);
+    };
+    if(typeof Tally!=="undefined")v();
+    else if(d.querySelector('script[src="'+w+'"]')==null){
+      var s=d.createElement("script");
+      s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);
+    }
+  </script>
 </main>
 
 <footer>
