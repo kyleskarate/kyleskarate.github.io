@@ -31,11 +31,13 @@
 
     /* MAIN */
     main{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:70vh;padding:2rem 1rem;}
-    main h1{font-size:5rem;font-weight:900;margin-bottom:1rem;color:#000;}
+    main h1{font-size:5rem;font-weight:900;margin-bottom:1rem;color:#000;animation:pulse 3s infinite;}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.8;transform:scale(1.05);}}
     main h2{font-size:1.5rem;margin-bottom:1rem;color:var(--text);}
     main p{max-width:500px;margin-bottom:2rem;color:var(--muted);}
-    main a.cta{display:inline-block;background:#000;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:background .2s;}
-    main a.cta:hover{background:#222;}
+    .btn-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+    .btn-row a{display:inline-block;background:#000;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:background .2s;}
+    .btn-row a:hover{background:#222;}
 
     /* FOOTER */
     footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
@@ -87,9 +89,13 @@
 <main>
   <h1>404</h1>
   <h2>Page Not Found</h2>
-  <p>Sorry, the page you’re looking for doesn’t exist or may have been moved.  
-  Return to the homepage to continue exploring Kyle’s Karate programs.</p>
-  <a href="index.html" class="cta">Go Home</a>
+  <p>Sorry, the page you’re looking for doesn’t exist or may have been moved.<br>
+  Try registering below or return to the homepage.</p>
+  
+  <div class="btn-row">
+    <a href="register.html">Register</a>
+    <a href="index.html">Go Home</a>
+  </div>
 </main>
 
 <footer>
