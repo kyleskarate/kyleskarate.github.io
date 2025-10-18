@@ -36,8 +36,25 @@
     p{color:var(--muted);margin-bottom:1rem;}
     ul{margin-left:1.5rem;color:var(--muted);}
     li{margin-bottom:.7rem;}
-    img{width:100%;border-radius:12px;margin:1.5rem 0;}
-    a.cta{display:inline-block;background:#000;color:#fff;padding:1rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;transition:background .2s;}
+    img{
+      display:block;
+      max-width:650px;
+      width:100%;
+      height:auto;
+      border-radius:12px;
+      margin:1.5rem auto;
+    }
+
+    a.cta{
+      display:inline-block;
+      background:#000;
+      color:#fff;
+      padding:1rem 2rem;
+      border-radius:8px;
+      font-weight:600;
+      text-decoration:none;
+      transition:background .2s;
+    }
     a.cta:hover{background:#222;}
 
     /* top buttons */
@@ -126,7 +143,7 @@
 
     <div style="text-align:center;margin-top:1.8rem;">
       <a href="register.html" class="cta" style="margin-right:0.8rem;">Register</a>
-      <a href="locations.html" class="cta" style="background:#555;">See the List</a>
+      <a href="locations.html" class="cta">See the List</a>
     </div>
   </section>
 
