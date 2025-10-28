@@ -31,6 +31,13 @@ nav a:hover{opacity:.6;}
 
 /* LESSON CONTENT */
 main{max-width:800px;margin:4rem auto;padding:0 1rem;}
+#lessonContent h1{font-size:2.3rem;font-weight:800;margin-bottom:0.5rem;}
+#lessonContent .updated{font-size:0.95rem;color:var(--muted);margin-bottom:2rem;}
+#lessonContent section{margin-bottom:2.5rem;}
+#lessonContent h2{font-size:1.4rem;font-weight:700;margin-bottom:0.6rem;color:#000;}
+#lessonContent p,#lessonContent li{margin-bottom:0.8rem;}
+#lessonContent ul{margin-left:1.2rem;}
+#lessonContent .contact{font-size:0.95rem;color:var(--muted);margin-top:2rem;border-top:1px solid #ddd;padding-top:1rem;}
 
 /* FOOTER */
 footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
@@ -124,20 +131,30 @@ footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
 <div id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑</div>
 
 <script>
-// mobile menu
+// mobile nav
 const hamburger=document.getElementById('hamburger');
 const mobileNav=document.getElementById('mobileNav');
-function toggleMenu(){hamburger.classList.toggle('active');mobileNav.classList.toggle('show');}
+function toggleMenu(){
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('show');
+}
 
-// scroll to top
+// scroll-to-top button
 const scrollTopBtn=document.getElementById('scrollTopBtn');
-window.addEventListener('scroll',()=>{if(window.scrollY>400){scrollTopBtn.classList.add('show');}else{scrollTopBtn.classList.remove('show');}});
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>400){scrollTopBtn.classList.add('show');}
+  else{scrollTopBtn.classList.remove('show');}
+});
 
-// load lesson content
+// dynamically load lesson content
 fetch('lesson-content.html')
   .then(r=>r.text())
-  .then(html=>{document.getElementById('lessonContent').innerHTML=html;})
-  .catch(()=>{document.getElementById('lessonContent').innerHTML="<p>Lesson content unavailable. Please check back later.</p>";});
+  .then(html=>{
+    document.getElementById('lessonContent').innerHTML=html;
+  })
+  .catch(()=>{
+    document.getElementById('lessonContent').innerHTML="<p>Lesson content unavailable. Please check back later.</p>";
+  });
 </script>
 </body>
 </html>
