@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Lesson Plan | Kyle’s Karate</title>
+  <meta name="description" content="Weekly lesson plan for Kyle’s Karate students and parents." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html,body{max-width:100%;overflow-x:hidden;}
+    :root{--text:#37352F;--muted:#555;--font:'Inter',sans-serif;}
+    *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth;}
+    body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;}
+
+    /* HEADER (same as site) */
+    header{background:#fff;padding:0.8rem 1rem;position:relative;z-index:10;}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+    .logo img{height:52px;display:block;}
+    nav{display:flex;gap:1.6rem;}
+    nav a{color:var(--text);text-decoration:none;font-weight:600;transition:opacity .2s;}
+    nav a:hover{opacity:.6;}
+    .hamburger{display:none;flex-direction:column;justify-content:space-between;width:22px;height:16px;cursor:pointer;}
+    .hamburger span{display:block;height:2px;background:#000;border-radius:3px;transition:all .3s ease;}
+    .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger.active span:nth-child(2){opacity:0;}
+    .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{display:none;flex-direction:column;background:#fff;position:absolute;top:100%;left:0;width:100%;border-top:1px solid #eee;padding:1rem 0;text-align:center;opacity:0;transform:translateY(-10px);transition:opacity .25s,transform .25s;}
+    .mobile-nav.show{display:flex;opacity:1;transform:translateY(0);}
+    .mobile-nav a{color:#000;text-decoration:none;font-weight:600;padding:.7rem 0;display:block;}
+
+    /* LESSON PLAN SECTION */
+    main{max-width:800px;margin:4rem auto;padding:0 1rem;}
+    main h1{font-size:2.3rem;font-weight:800;margin-bottom:0.5rem;}
+    main .updated{font-size:0.95rem;color:var(--muted);margin-bottom:2rem;}
+    section{margin-bottom:2.5rem;}
+    section h2{font-size:1.4rem;font-weight:700;margin-bottom:0.6rem;color:#000;}
+    section p, section li{margin-bottom:0.8rem;}
+    ul{margin-left:1.2rem;}
+    .contact{font-size:0.95rem;color:var(--muted);margin-top:2rem;border-top:1px solid #ddd;padding-top:1rem;}
+
+    /* FOOTER (same as site) */
+    footer{background:#000;color:#fff;padding:3.5rem 1rem;margin-top:3rem;}
+    .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;max-width:1000px;margin:0 auto 2rem;}
+    .footer-logo{flex-shrink:0;}
+    .footer-logo a img{height:85px;display:block;margin-bottom:1.5rem;}
+    .footer-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:2.3rem;max-width:640px;}
+    .footer-column h2{font-size:1.2rem;margin-bottom:0.8rem;font-weight:700;}
+    .footer-column a{display:block;color:#fff;text-decoration:none;margin:0.3rem 0;transition:opacity 0.2s;}
+    .footer-column a:hover{opacity:0.7;}
+    .footer-bottom{text-align:center;font-size:0.9rem;border-top:1px solid #333;padding-top:1.5rem;}
+    .footer-bottom p{margin:0.3rem 0;}
+
+    @media(max-width:900px){
+      nav{display:none;}
+      .hamburger{display:flex;}
+      .logo img{height:36px;}
+      .footer-inner{flex-direction:column;align-items:flex-start;gap:2rem;}
+      .footer-columns{grid-template-columns:1fr;gap:1.5rem;max-width:100%;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Kyle’s Karate Logo"></a>
+    <nav>
+      <a href="register.html">Register</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://kyleskarate.printful.me/kids-youth-clothing">Merch</a>
+    </nav>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="register.html">Register</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://kyleskarate.printful.me/kids-youth-clothing">Merch</a>
+  </div>
+</header>
+
+<main>
+  <h1>Lesson Plan: Better Blocks</h1>
+  <p class="updated">Updated: November 5, 2023</p>
+
+  <section>
+    <h2>Objectives</h2>
+    <p>This week focuses on blocks. Students will practice the four fundamental blocks — High, Middle, Low, and Shin — and learn variations such as Upper Middle, Lower Middle, Wing, and Wall Blocks. We'll also discuss Active vs. Static blocking and reinforce the importance of keeping guards up at all times.</p>
+  </section>
+
+  <section>
+    <h2>Drills</h2>
+    <ul>
+      <li><strong>Naming The Blocks:</strong> Students repeat each block with its name to reinforce memorization.</li>
+      <li><strong>Kick and Block:</strong> Students kick while reacting to a simulated strike, training multitasking and guard retention.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Games</h2>
+    <ul>
+      <li><strong>Last One In Gets The Win:</strong> Elimination game emphasizing fast and accurate blocking.</li>
+      <li><strong>The Shark Game:</strong> Students avoid the low “shark” blocker to work on balance and reaction.</li>
+      <li><strong>Blocking Deflection:</strong> Students use blocks to deflect soft cones or targets thrown toward them.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Words of Wisdom</h2>
+    <p>A well-executed block is not merely defense—it’s the first step toward control. In life, as in karate, success often comes from anticipation and timely response rather than brute force.</p>
+  </section>
+
+  <section>
+    <h2>Class Routine</h2>
+    <ul>
+      <li>Bow In, Attendance, and Lesson Talk</li>
+      <li>Stretching</li>
+      <li>Warm Up Techniques</li>
+      <li>Lesson Objectives</li>
+      <li>Game</li>
+      <li>Words of Wisdom</li>
+      <li>Merit Award and Bow Out</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>At-Home Challenge</h2>
+    <p>Practice blocking in front of a mirror to improve self-awareness and precision. Notice small details such as arm height and guard position, adjusting as needed.</p>
+  </section>
+
+  <section>
+    <h2>Parent-Child Bonding Idea</h2>
+    <p><strong>Block With Me:</strong> Use gentle open-palm strikes (or a pool noodle) to simulate attacks while your child practices blocking. Adjust speed to their skill level and switch roles for fun.</p>
+  </section>
+
+  <p class="contact">Program Contact: Kyle Mitcham | (301) 250-3210 | info@kyleskarate.com | <a href="https://www.kyleskarate.com">KylesKarate.com</a></p>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <a href="index.html"><img src="images/logoOnBlack.png" alt="Kyle’s Karate Logo on Black"></a>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h2>Services</h2>
+        <a href="register.html">Register</a>
+        <a href="services.html#enrichment">Classes</a>
+        <a href="services.html#birthdays">Birthdays</a>
+        <a href="services.html#private">Private Lessons</a>
+        <a href="services.html#events">Events</a>
+      </div>
+      <div class="footer-column">
+        <h2>About</h2>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html#locations">Locations</a>
+      </div>
+      <div class="footer-column">
+        <h2>Legal</h2>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="waiver.html">Injury Waiver</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© Copyright 2014–2025 Kyle’s Karate</p>
+    <p>The combined name “Kyle’s Karate” is a registered trademark.</p>
+  </div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+function toggleMenu(){
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
