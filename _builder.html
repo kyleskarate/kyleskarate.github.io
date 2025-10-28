@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson Plan Builder | Kyle’s Karate</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fafafa;
+      color: #222;
+      margin: 2rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin-inline: auto;
+    }
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 1.4rem;
+      font-weight: 600;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #fff;
+    }
+    textarea { min-height: 80px; }
+    .multi-select {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .multi-select label {
+      font-weight: 400;
+      margin-top: 0.2rem;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    button:hover { background: #222; }
+    #output {
+      margin-top: 3rem;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+    #copyBtn {
+      display: none;
+      margin-left: 1rem;
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lesson Plan Builder</h1>
+
+  <label>Lesson Title</label>
+  <input type="text" id="title" placeholder="e.g. Better Blocks" />
+
+  <label>Date Updated</label>
+  <input type="text" id="date" placeholder="e.g. November 5, 2023" />
+
+  <label>Objectives</label>
+  <textarea id="objectives" placeholder="Enter short bullet-style objectives..."></textarea>
+
+  <label>Drills (select any)</label>
+  <div id="drills" class="multi-select"></div>
+
+  <label>Games (select any)</label>
+  <div id="games" class="multi-select"></div>
+
+  <label>Words of Wisdom</label>
+  <textarea id="wisdom" placeholder="Short motivational thought..."></textarea>
+
+  <label>Class Routine</label>
+  <textarea id="routine" placeholder="List of class steps..."></textarea>
+
+  <label>At-Home Challenge</label>
+  <textarea id="home" placeholder="Quick at-home exercise idea..."></textarea>
+
+  <label>Parent-Child Bonding Idea</label>
+  <textarea id="bond" placeholder="Fun shared drill or reflection..."></textarea>
+
+  <button onclick="generateHTML()">Generate Lesson HTML</button>
+  <button id="copyBtn" onclick="copyOutput()">Copy to Clipboard</button>
+
+  <div id="output"></div>
+
+  <script>
+    // --- drill/game master list ---
+    const data = {
+      drills: [
+        "Kick and Block",
+        "Naming the Blocks",
+        "Guard Reaction Drill",
+        "Partner Mirror Drill",
+        "One-Step Defense Practice"
+      ],
+      games: [
+        "The Shark Game",
+        "Blocking Deflection",
+        "Last One In Gets The Win",
+        "Focus Pad Frenzy",
+        "Balance Battle"
+      ]
+    };
+
+    // populate checkboxes
+    const drillContainer = document.getElementById('drills');
+    const gameContainer = document.getElementById('games');
+    data.drills.forEach(d => {
+      drillContainer.insertAdjacentHTML('beforeend',
+        `<label><input type="checkbox" value="${d}"> ${d}</label>`);
+    });
+    data.games.forEach(g => {
+      gameContainer.insertAdjacentHTML('beforeend',
+        `<label><input type="checkbox" value="${g}"> ${g}</label>`);
+    });
+
+    // generate lesson html
+    function generateHTML() {
+      const title = document.getElementById('title').value.trim();
+      const date = document.getElementById('date').value.trim();
+      const obj = document.getElementById('objectives').value.trim();
+      const wisdom = document.getElementById('wisdom').value.trim();
+      const routine = document.getElementById('routine').value.trim();
+      const home = document.getElementById('home').value.trim();
+      const bond = document.getElementById('bond').value.trim();
+
+      const drills = [...document.querySelectorAll('#drills input:checked')].map(el=>el.value);
+      const games = [...document.querySelectorAll('#games input:checked')].map(el=>el.value);
+
+      let html = `<h1>Lesson Plan: ${title}</h1>\n<p class="updated">Updated: ${date}</p>\n`;
+
+      if (obj) html += `<section>\n<h2>Objectives</h2>\n<p>${obj}</p>\n</section>\n`;
+
+      if (drills.length) {
+        html += `<section>\n<h2>Drills</h2>\n<ul>\n`;
+        drills.forEach(d => html += `<li><strong>${d}</strong></li>\n`);
+        html += `</ul>\n</section>\n`;
+      }
+
+      if (games.length) {
+        html += `<section>\n<h2>Games</h2>\n<ul>\n`;
+        games.forEach(g => html += `<li><strong>${g}</strong></li>\n`);
+        html += `</ul>\n</section>\n`;
+      }
+
+      if (wisdom) html += `<section>\n<h2>Words of Wisdom</h2>\n<p>${wisdom}</p>\n</section>\n`;
+      if (routine) html += `<section>\n<h2>Class Routine</h2>\n<p>${routine}</p>\n</section>\n`;
+      if (home) html += `<section>\n<h2>At-Home Challenge</h2>\n<p>${home}</p>\n</section>\n`;
+      if (bond) html += `<section>\n<h2>Parent-Child Bonding Idea</h2>\n<p>${bond}</p>\n</section>\n`;
+
+      html += `<p class="contact">Program Contact: Kyle Mitcham | (301) 250-3210 | info@kyleskarate.com | <a href="https://www.kyleskarate.com">KylesKarate.com</a></p>`;
+
+      document.getElementById('output').textContent = html;
+      document.getElementById('copyBtn').style.display = 'inline-block';
+    }
+
+    function copyOutput() {
+      const out = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(out).then(()=>{
+        alert("Lesson HTML copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
