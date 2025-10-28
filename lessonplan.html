@@ -147,7 +147,7 @@ window.addEventListener('scroll',()=>{
 });
 
 // dynamically load lesson content
-fetch('lesson-content.html')
+fetch('lesson-content.html?v=' + Date.now())
   .then(r=>r.text())
   .then(html=>{
     document.getElementById('lessonContent').innerHTML=html;
